@@ -1,7 +1,19 @@
 doctype html
-html
+html(lang='en', class='no-js')
   head
+    meta(charset='UTF-8')
+    meta(name='viewport', content='user-scalable=no, initial-scale=1.0, maximum-scale=1.0, width=device-width')
+    meta(http-equiv='X-UA-Compatible', content='IE=Edge')
     title= title
+    include ./includes/critical_css
     link(rel='stylesheet', href='/stylesheets/style.css')
   body
-    block content
+    div.container
+      header
+        include ./includes/header
+      nav(role='main')
+        include ./includes/nav
+      main
+        block content
+      footer
+        include ./includes/footer
