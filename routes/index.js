@@ -5,7 +5,8 @@ var router = express.Router();
 router.get('/', function(req, res, next) {
   res.render('index', {
     section: 'index',
-    title: 'White Knight Implants'
+    title: 'White Knight Implants',
+    company_name: req.app.get('company_name')
   });
 });
 
@@ -13,7 +14,8 @@ router.get('/', function(req, res, next) {
 router.get('/lab', function(req, res, next) {
   res.render('lab', {
     section: 'lab',
-    title: 'Our lab'
+    title: 'Our lab',
+    company_name: req.app.get('company_name')
   });
 });
 
@@ -21,7 +23,8 @@ router.get('/lab', function(req, res, next) {
 router.get('/work', function(req, res, next) {
   res.render('work', {
     section: 'work',
-    title: 'Our work'
+    title: 'Our work',
+    company_name: req.app.get('company_name')
   });
 });
 
@@ -29,7 +32,8 @@ router.get('/work', function(req, res, next) {
 router.get('/literature', function(req, res, next) {
   res.render('literature', {
     section: 'literature',
-    title: 'Literature'
+    title: 'Literature',
+    company_name: req.app.get('company_name')
   });
 });
 
@@ -37,7 +41,8 @@ router.get('/literature', function(req, res, next) {
 router.get('/contact', function(req, res, next) {
   res.render('contact', {
     section: 'contact',
-    title: 'Contact us'
+    title: 'Contact us',
+    company_name: req.app.get('company_name')
   });
 });
 

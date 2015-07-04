@@ -55,5 +55,6 @@ app.use(function(err, req, res, next) {
   });
 });
 
+app.set('company_name', 'White Knight Implants, LLC');
 
 module.exports = app;
