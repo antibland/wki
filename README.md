@@ -1,1 +1,1 @@
-# White Knight Implants, Inc.
+# White Knight Implants, LLC
