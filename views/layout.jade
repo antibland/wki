@@ -8,12 +8,11 @@ html(lang='en', class='no-js')
     include ./includes/critical_css
     link(rel='stylesheet', href='/stylesheets/style.css')
   body
-    div.container
-      header
-        include ./includes/header
-      nav(role='main')
-        include ./includes/nav
-      main
-        block content
-      footer
-        include ./includes/footer
+    header
+      include ./includes/header
+    nav(role='main')
+      include ./includes/nav
+    main
+      block content
+    footer
+      include ./includes/footer
