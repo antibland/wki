@@ -1,0 +1,63 @@
+nav {
+  width: calc(100% - 200px);
+
+  ul {
+    width: 100%;
+    position: relative;
+    top: 0;
+    perspective: 17em;
+  }
+
+  li {
+    transition: 0.3s box-shadow;
+    position: absolute;
+    min-width: 10em;
+    transform: rotateZ(90deg);
+    top: 0;
+    left: 0;
+    box-shadow: 1px 0 1px 0 rgba(0,0,0,.2);
+    transform-origin: 0 0;
+    animation: swing 1.5s ease-in-out infinite alternate;
+
+    &:nth-child(2) {
+      animation-delay: 0.8s;
+      left: 4.5em;
+    }
+
+    &:nth-child(3) {
+      animation-delay: 0.3s;
+      left: 9em;
+    }
+
+    &:nth-child(4) {
+      animation-delay: 0.1s;
+      left: 13.5em;
+    }
+
+    &:nth-child(5) {
+      animation-delay: 0.4s;
+      left: 18em;
+    }
+  }
+
+  a {
+    display: block;
+    text-decoration: none;
+    white-space: nowrap;
+    background-color: white;
+    padding: 1em;
+    letter-spacing: 1px;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 1.5em;
+    color: black;
+    transition: 0.3s;
+    text-shadow: 0 0 1px rgba(0,151,222, 0.5);
+
+    &:hover,
+    &:focus {
+      background-color: $blue;
+      color: white;
+    }
+  }
+}
