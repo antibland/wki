@@ -1,1 +1,18 @@
-| header goes here
+header
+  div.logo
+    a(href='/')
+    img(src='/images/logo.png', alt='#{company_name} logo', width='113', height='68')
+
+  nav(role='main')
+    ul(class="#{section}")
+      li.index
+        a(href="/", class="nav-link") Home
+      li.lab
+        a(href="/lab", class="nav-link") Lab
+      li.work
+        a(href="/work", class="nav-link") Work
+      li.literature
+        a(href="/literature", class="nav-link") Literature
+      li.contact
+        a(href="/contact", class="nav-link") Contact
+
