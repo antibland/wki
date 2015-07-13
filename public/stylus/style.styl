@@ -1,6 +1,7 @@
 @import 'reset.styl';
 @import 'variables.styl';
 @import 'header.styl';
+@import 'hamburger.styl';
 @import 'animations.styl';
 
 * {
@@ -50,7 +51,7 @@ p {
 }
 
 main {
-  padding: 2em 1.5em;
+  padding: 2em 1.5em 3em;
   line-height: 2.5rem;
   max-width: 68.55em;
   margin: 0 auto;
@@ -59,7 +60,7 @@ main {
 footer {
   position: absolute;
   bottom: 0;
-  height: 3.1em;
+  height: 3.5em;
   padding: 1em;
   text-align: center;
   width: 100%;
@@ -68,4 +69,6 @@ footer {
 .container {
   min-height: 100%;
   position: relative;
+  max-width: 100%;
+  display: block;
 }

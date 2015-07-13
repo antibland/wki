@@ -2,3 +2,10 @@ footer
   - var year = new Date().getFullYear();
   p.
     &copy; #{year} #{company_name}.
+  script.
+    window.onload = function() {
+      var toggleNav = document.getElementById("toggle-nav");
+      toggleNav.addEventListener("click", function() {
+        this.classList.toggle("nav-opened");
+      });
+    }

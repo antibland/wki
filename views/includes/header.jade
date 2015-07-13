@@ -3,16 +3,25 @@ header
     a(href='/')
     img(src='/images/logo.png', alt='#{company_name} logo', width='113', height='68')
 
-  nav(role='main')
-    ul(class="#{section}")
+  nav(role='main', id='main-nav')
+    button(id='toggle-nav', aria-controls='main-nav')
+      span(class='top line')
+      span(class='middle line')
+      span(class='bottom line')
+      span(class='label') MENU
+
+    ul(class='#{section} menu-list')
       li.index
-        a(href="/", class="nav-link") Home
+        a(href='/', class='menu-link') Home
       li.lab
-        a(href="/lab", class="nav-link") Lab
+        a(href='/lab', class='menu-link') Lab
       li.work
-        a(href="/work", class="nav-link") Work
+        a(href='/work', class='menu-link') Work
       li.literature
-        a(href="/literature", class="nav-link") Literature
+        a(href='/literature', class='menu-link') Literature
       li.contact
-        a(href="/contact", class="nav-link") Contact
+        a(href='/contact', class='menu-link') Contact
+
+
+
 

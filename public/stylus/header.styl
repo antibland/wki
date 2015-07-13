@@ -1,25 +1,36 @@
-header {
+header
   background-color: $blue;
   display: flex;
-}
 
-.logo {
+.logo
   flex: 0 0 150px;
   padding: 1em 0;
 
-  > img {
+  > img
     display: block;
     margin: 0 auto;
-  }
-}
 
 nav
   flex: 1;
   display: flex;
   margin: 0 2em 0 0.5em;
+
+  @media only screen and (max-width: 768px)
+    position: fixed;
+    right: -1.7rem;
+    width: 22rem;
+    top: 7.8rem;
+
   ul
     display: flex;
     flex: 1;
+
+    @media only screen and (max-width: 768px)
+      flex-direction: column;
+      transition: 0.3s cubic-bezier(0.48, 0.26, 0.05, 1.07);
+      transform: translateX(50em);
+      opacity: 0;
+
   li
     display: flex;
     flex: 1;
@@ -30,6 +41,9 @@ nav
 
     &:last-child > a
       border-radius: 0 0.35em 0.35em 0;
+
+      @media only screen and (max-width: 768px)
+        border: none;
   a
     width: 100%;
     display: block;
@@ -47,4 +61,10 @@ nav
     &:hover,
     &:focus
       background-color: lighten(#0097de, 80%);
+
+    @media only screen and (max-width: 768px)
+      border-right: none;
+      border-radius: 0 !important;
+      border-bottom: 1px solid $blue;
+
 
