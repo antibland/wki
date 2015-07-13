@@ -1,0 +1,49 @@
+#toggle-nav
+  cursor: pointer;
+  display: block;
+  height: 6rem;
+  width: 6rem;
+  position: fixed;
+  top: 1.5em;
+  right: 1em;
+  display: none;
+  border: none;
+  background: white;
+
+  @media only screen and (max-width: 768px)
+    display: block;
+
+    &.nav-opened
+      background-color: rgba(0, 0, 0, 0.5);
+      &> .line
+        background-color: white;
+      &> .label
+        color: white;
+      &+ .menu-list
+        transform: translateX(0);
+        opacity: 1;
+
+  .top,
+  .middle,
+  .bottom {
+    position: absolute;
+    right: 1.2rem;
+    left: 1.2rem;
+    height: 0.3rem;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+
+  .top
+    top: 1.2rem;
+  .middle
+    top: 2.2rem;
+  .bottom
+    top: 3.2rem;
+  .label
+    text-align: center;
+    position: absolute;
+    bottom: 0.5rem;
+    left: 0;
+    right: 0;
+    font-size: 1.1rem;
+    color: rgba(0, 0, 0, 0.5);
