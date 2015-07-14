@@ -1,0 +1,60 @@
+nav
+  flex: 1;
+  display: flex;
+  margin: 0 2em 0 0.5em;
+
+  @media only screen and (max-width: 768px)
+    position: fixed;
+    right: -1.7rem;
+    width: 22rem;
+    top: 7.8rem;
+
+  ul
+    display: flex;
+    flex: 1;
+
+    for item in menu-list
+      &.{item} .{item} .menu-link
+        background-color: lighten(#0097de, 80%);
+
+    @media only screen and (max-width: 768px)
+      flex-direction: column;
+      transition: 0.3s cubic-bezier(0.48, 0.26, 0.05, 1.07);
+      transform: translateX(50em);
+      opacity: 0;
+
+  li
+    display: flex;
+    flex: 1;
+    align-items: center;
+
+    &:first-child > a
+      border-radius: 0.35em 0 0 0.35em;
+
+    &:last-child > a
+      border-radius: 0 0.35em 0.35em 0;
+
+      @media only screen and (max-width: 768px)
+        border: none;
+  a
+    width: 100%;
+    display: block;
+    white-space: nowrap;
+    text-decoration: none;
+    background-color: white;
+    padding: 0.75em;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 1.4rem;
+    color: black;
+    transition: 0.3s;
+    border-right: 1px solid $blue;
+
+    &:hover,
+    &:focus
+      background-color: lighten(#0097de, 80%);
+
+    @media only screen and (max-width: 768px)
+      border-right: none;
+      border-radius: 0 !important;
+      border-bottom: 1px solid $blue;

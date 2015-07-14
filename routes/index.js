@@ -10,34 +10,43 @@ router.get('/', function(req, res, next) {
   });
 });
 
-/* GET lab page */
-router.get('/lab', function(req, res, next) {
-  res.render('lab', {
-    section: 'lab',
-    title: 'Our lab',
+/* GET resrouces page. */
+router.get('/resources', function(req, res, next) {
+  res.render('resources', {
+    section: 'resources',
+    title: 'Resources',
     company_name: req.app.get('company_name')
   });
 });
 
-/* GET lab page */
-router.get('/work', function(req, res, next) {
-  res.render('work', {
-    section: 'work',
-    title: 'Our work',
+/* GET family page */
+router.get('/family', function(req, res, next) {
+  res.render('family', {
+    section: 'family',
+    title: 'Our family' ,
     company_name: req.app.get('company_name')
   });
 });
 
-/* GET lab page */
-router.get('/literature', function(req, res, next) {
-  res.render('literature', {
-    section: 'literature',
-    title: 'Literature',
+/* GET services page */
+router.get('/services', function(req, res, next) {
+  res.render('services', {
+    section: 'services',
+    title: 'Services',
     company_name: req.app.get('company_name')
   });
 });
 
-/* GET lab page */
+/* GET implants page */
+router.get('/implants', function(req, res, next) {
+  res.render('implants', {
+    section: 'implants',
+    title: 'Implants',
+    company_name: req.app.get('company_name')
+  });
+});
+
+/* GET contact page */
 router.get('/contact', function(req, res, next) {
   res.render('contact', {
     section: 'contact',

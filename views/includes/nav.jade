@@ -1,0 +1,13 @@
+nav(role='main', id='main-nav')
+  button(id='toggle-nav', aria-controls='main-nav')
+    span(class='top line')
+    span(class='middle line')
+    span(class='bottom line')
+    span(class='label') MENU
+
+  - var titles    = ['Our family', 'Services', 'Implants', 'Resources', 'Contact']
+  - var menu_list = ['family', 'services', 'implants', 'resources', 'contact']
+  ul(class='#{section} menu-list')
+    each item, index in menu_list
+      li(class='#{item}')
+        a(href='/#{item}', class='menu-link') #{titles[index]}
