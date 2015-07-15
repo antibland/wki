@@ -5,9 +5,15 @@ nav(role='main', id='main-nav')
     span(class='bottom line')
     span(class='label') MENU
 
-  - var titles    = ['Our family', 'Services', 'Implants', 'Resources', 'Contact']
-  - var menu_list = ['family', 'services', 'implants', 'resources', 'contact']
-  ul(class='#{section} menu-list')
+  - var titles       = ['Our family', 'Services', 'Implants', 'Resources', 'Contact']
+  - var menu_list    = ['family', 'services', 'implants', 'resources', 'contact']
+  - var implant_list = ['implant 1', 'implant 2', 'implant 3']
+  ul(class='#{section} menu-list primary', role='menubar', aria-hidden='false')
     each item, index in menu_list
-      li(class='#{item}')
+      li(class='#{item} menu-item primary', role='menuitem')
         a(href='/#{item}', class='menu-link') #{titles[index]}
+        if item == 'implants'
+          ul(class='#{section} menu-list sub', role='menubar', aria-hidden='true')
+            each sub_item, index in implant_list
+              li(class='#{item} menu-item sub', role='menuitem')
+                a(href='/#{item}', class='menu-link sub') #{implant_list[index]}
