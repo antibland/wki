@@ -4,8 +4,60 @@ footer
     &copy; #{year} #{company_name}.
   script.
     window.onload = function() {
-      var toggleNav = document.getElementById("toggle-nav");
+      var toggleNav      = document.getElementById("toggle-nav"),
+          menuListItems  = document.querySelectorAll(".menu-list.primary > .menu-item"),
+          menuAnchors    = document.querySelectorAll(".menu-item.primary > .menu-link"),
+          menuSubLinks   = document.querySelectorAll(".menu-link.sub"),
+          menuSubLists   = document.querySelectorAll(".menu-list.sub"),
+          hoverListeners = "mouseover mouseout";
+
+      function closeAllSubLists() {
+        var len   = menuSubLists.length;
+
+        for (var i = 0; i < len; i++) {
+          menuSubLists[i].setAttribute("aria-hidden", "true");
+        }
+      }
+
+      function setMenuSubLinkTabbing(state) {
+        var len      = menuSubLinks.length,
+            tabState = state || 0;
+
+        for (var i = 0; i < len; i++) {
+          menuSubLinks[i].setAttribute("tabindex", tabState);
+        }
+      }
+
       toggleNav.addEventListener("click", function() {
         this.classList.toggle("nav-opened");
       });
-    }
+
+      hoverListeners.split(" ").forEach(function(evt) {
+        var subList, ariaState;
+
+        [].forEach.call(menuListItems, function(el) {
+          el.addEventListener(evt, function() {
+
+            if (el.querySelector(".menu-list.sub")) {
+              subList = el.querySelector(".menu-list.sub");
+              ariaState = evt === "mouseover" ? "false" : "true";
+              subList.setAttribute("aria-hidden", ariaState);
+            }
+          }, false);
+        });
+      });
+
+      [].forEach.call(menuAnchors, function(el) {
+        el.addEventListener("focus", function() {
+          closeAllSubLists();
+          setMenuSubLinkTabbing();
+
+          if (el.parentNode.querySelector(".menu-list.sub")) {
+            var subList = el.parentNode.querySelector(".menu-list.sub");
+            subList.setAttribute("aria-hidden", "false");
+          } else {
+            setMenuSubLinkTabbing(-1);
+          }
+        }, false);
+      });
+    };

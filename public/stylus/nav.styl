@@ -10,11 +10,17 @@ nav
     top: 7.8rem;
 
   .menu-list.sub
+    transition: 0.2s cubic-bezier(0, 0, 1, 0.21);
     display: block;
     position: absolute;
+    max-height: 0;
+    overflow: hidden;
     left: 0;
     right: 0;
     top: 4.85em;
+
+    &[aria-hidden=false]
+      max-height: 10em;
 
   .menu-link.sub
     border: none;
