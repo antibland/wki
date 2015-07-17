@@ -1,1 +1,1 @@
-header{background-color:$blue;display:-webkit-box;display:-webkit-flex;display:-moz-box;display:-ms-flexbox;display:flex}.logo{-webkit-box-flex:0;-webkit-flex:0 0 150px;-moz-box-flex:0;-ms-flex:0 0 150px;flex:0 0 150px;padding:1em 0}.logo img{display:block;margin:0 auto}
+header{background-color:$blue}.logo{padding:1em 0}.logo img{display:block;margin:0 auto}

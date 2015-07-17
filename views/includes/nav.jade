@@ -1,3 +1,9 @@
+- var titles         = ['The Lab', 'Itero', 'Ceramics', 'Implants', 'Removable Prosthetics']
+- var menu_list      = ['lab', 'itero', 'ceramics', 'implants', 'removable_prosthetics']
+- var implants_list  = ['Custom Abut.', 'Encode', 'ASC Abut.', 'Izir', 'Screw Retained']
+- var ceramics_list  = ['Emax', 'BruxZir', 'Lava Crowns']
+- var removable_prosthetics_list = ['Full Dentures', 'Partial Dentures', 'Implant Over.', 'Mesiostructure']
+
 nav(role='main', id='main-nav')
   button(id='toggle-nav', aria-controls='main-nav')
     span(class='top line')
@@ -5,15 +11,29 @@ nav(role='main', id='main-nav')
     span(class='bottom line')
     span(class='label') MENU
 
-  - var titles       = ['Our family', 'Services', 'Implants', 'Resources', 'Contact']
-  - var menu_list    = ['family', 'services', 'implants', 'resources', 'contact']
-  - var implant_list = ['implant 1', 'implant 2', 'implant 3']
+  - var url_hash = ''
   ul(class='#{section} menu-list primary', role='menubar', aria-hidden='false')
     each item, index in menu_list
       li(class='#{item} menu-item primary', role='menuitem')
         a(href='/#{item}', class='menu-link') #{titles[index]}
-        if item == 'implants'
-          ul(class='#{section} menu-list sub', role='menubar', aria-hidden='true')
-            each sub_item, index in implant_list
-              li(class='#{item} menu-item sub', role='menuitem')
-                a(href='/#{item}', class='menu-link sub') #{implant_list[index]}
+
+        case item
+          when 'ceramics'
+            ul(class='#{section} menu-list sub', role='menubar', aria-hidden='true')
+              each sub_item, index in ceramics_list
+                - url_hash = ceramics_list[index].replace(/\s+/g, '_')
+                li(class='#{item} menu-item sub', role='menuitem')
+                  a(href='/#{item}##{url_hash}', class='menu-link sub') #{ceramics_list[index]}
+          when 'implants'
+            ul(class='#{section} menu-list sub', role='menubar', aria-hidden='true')
+              each sub_item, index in implants_list
+                - url_hash = implants_list[index].replace(/\s+/g, '_')
+                li(class='#{item} menu-item sub', role='menuitem')
+                  a(href='/#{item}##{url_hash}', class='menu-link sub') #{implants_list[index]}
+          when 'removable_prosthetics'
+            ul(class='#{section} menu-list sub', role='menubar', aria-hidden='true')
+              each sub_item, index in removable_prosthetics_list
+                - url_hash = removable_prosthetics_list[index].replace(/\s+/g, '_')
+                li(class='#{item} menu-item sub', role='menuitem')
+                  a(href='/#{item}##{url_hash}', class='menu-link sub') #{removable_prosthetics_list[index]}
+

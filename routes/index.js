@@ -1,7 +1,6 @@
 var express = require('express');
 var router = express.Router();
 
-/* GET home page. */
 router.get('/', function(req, res, next) {
   res.render('index', {
     section: 'index',
@@ -10,34 +9,30 @@ router.get('/', function(req, res, next) {
   });
 });
 
-/* GET resrouces page. */
-router.get('/resources', function(req, res, next) {
-  res.render('resources', {
-    section: 'resources',
-    title: 'Resources',
+router.get('/lab', function(req, res, next) {
+  res.render('lab', {
+    section: 'lab',
+    title: 'The Lab' ,
     company_name: req.app.get('company_name')
   });
 });
 
-/* GET family page */
-router.get('/family', function(req, res, next) {
-  res.render('family', {
-    section: 'family',
-    title: 'Our family' ,
+router.get('/itero', function(req, res, next) {
+  res.render('itero', {
+    section: 'itero',
+    title: 'Itero',
     company_name: req.app.get('company_name')
   });
 });
 
-/* GET services page */
-router.get('/services', function(req, res, next) {
-  res.render('services', {
-    section: 'services',
-    title: 'Services',
+router.get('/ceramics', function(req, res, next) {
+  res.render('ceramics', {
+    section: 'ceramics',
+    title: 'Ceramics',
     company_name: req.app.get('company_name')
   });
 });
 
-/* GET implants page */
 router.get('/implants', function(req, res, next) {
   res.render('implants', {
     section: 'implants',
@@ -46,7 +41,14 @@ router.get('/implants', function(req, res, next) {
   });
 });
 
-/* GET contact page */
+router.get('/removable_prosthetics', function(req, res, next) {
+  res.render('removable_prosthetics', {
+    section: 'removable_prosthetics',
+    title: 'Removable Prosthetics',
+    company_name: req.app.get('company_name')
+  });
+});
+
 router.get('/contact', function(req, res, next) {
   res.render('contact', {
     section: 'contact',

@@ -1,7 +1,9 @@
 nav
   flex: 1;
   display: flex;
-  margin: 0 2em 0 0.5em;
+  margin: 0 1.25em;
+  top: 0.9em;
+  position: relative;
 
   @media only screen and (max-width: 768px)
     position: fixed;
@@ -17,10 +19,10 @@ nav
     overflow: hidden;
     left: 0;
     right: 0;
-    top: 4.85em;
+    top: 2.75em;
 
     &[aria-hidden=false]
-      max-height: 10em;
+      max-height: 20em;
 
     @media only screen and (max-width: 768px)
       transform: translateX(-15.9em);
@@ -28,12 +30,12 @@ nav
 
   .menu-link.sub
     border: none;
-    border-bottom: 1px solid $blue;
-    border-radius: 0 !important;
+    border-bottom: 1px solid rgba(black, 0.1);
 
   .menu-list.primary
     display: flex;
     flex: 1;
+    box-shadow: 0 0px 4px rgba(0, 0, 0, 0.5);
 
     for item in $menu-list
       &.{item} > .{item} > .menu-link
@@ -51,14 +53,14 @@ nav
     align-items: center;
     position: relative;
 
-    &:first-child > a
-      border-radius: 0.35em 0 0 0.35em;
-
-    &:last-child > a
-      border-radius: 0 0.35em 0.35em 0;
+    &.removable_prosthetics
+      flex: 1 1 4em;
 
       @media only screen and (max-width: 768px)
-        border: none;
+        flex: 1;
+
+    &:last-child > a
+      border: none;
 
   .menu-link
     width: 100%;
@@ -66,13 +68,13 @@ nav
     white-space: nowrap;
     text-decoration: none;
     background-color: white;
-    padding: 0.75em;
+    padding: 1em 0;
     text-align: center;
     text-transform: uppercase;
-    font-size: 1.4rem;
+    font-size: 1.2rem;
     color: black;
     transition: 0.3s;
-    border-right: 1px solid $blue;
+    border-right: 1px solid rgba(black, 0.1);
 
     &:hover,
     &:focus
@@ -80,5 +82,4 @@ nav
 
     @media only screen and (max-width: 768px)
       border-right: none;
-      border-radius: 0 !important;
-      border-bottom: 1px solid $blue;
+      border-bottom: 1px solid rgba(black, 0.1);

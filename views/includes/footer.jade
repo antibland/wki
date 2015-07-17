@@ -51,6 +51,8 @@ footer
         [].forEach.call(menuListItems, function(el) {
           el.addEventListener(evt, function() {
 
+            closeAllSubLists();
+
             if (el.querySelector(".menu-list.sub")) {
               subList = el.querySelector(".menu-list.sub");
               ariaState = evt === "mouseover" ? "false" : "true";
