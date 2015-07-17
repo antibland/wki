@@ -31,11 +31,14 @@ h1, h2, h3 {
 }
 
 h1 {
-  font-size: 3rem;
+  font-size: 6rem;
+  line-height: 6rem;
+  margin-bottom: 4.5rem;
 }
 
 h2 {
   font-size: 2.6rem;
+  margin-bottom: 3rem;
 }
 
 h3 {
@@ -43,19 +46,63 @@ h3 {
 }
 
 p {
-  font-size: 1.8rem;
+  font-size: 2rem;
   margin-bottom: 1em;
+  line-height: 1.5em;
 
   footer & {
     font-size: 1.5rem;
   }
 }
 
+section
+  &:after
+    content: '';
+    display: block;
+    width: 100%;
+    height: 3rem;
+    position: absolute;
+    bottom: -1rem;
+
+  &:nth-child(odd)
+    background: gray;
+    &:after
+      background: white;
+      transform: rotateZ(0.5deg);
+
+  &:nth-child(even)
+    background: white;
+    &:after
+      background: gray;
+      transform: rotateZ(-0.5deg);
+
+  position: relative;
+
+  &.lead
+    background: rgba(black, 0.5);
+    padding-bottom: 3rem;
+
+    h1, h2, p
+      color: white;
+    h2
+      font-size: 3.5rem;
+
+    .inner
+      padding-top: 5.5em;
+
+  .inner
+    padding: 2em;
+    line-height: 2.5rem;
+    max-width: 68.55em;
+    margin: 0 auto;
+
+    &:last-child
+      padding-bottom: 5em;
+
+
 main {
-  padding: 3em 2em;
-  line-height: 2.5rem;
-  max-width: 68.55em;
-  margin: 0 auto;
+  background: url(/images/cameras@2x.jpg) 0 0 no-repeat;
+  background-size: cover;
 }
 
 footer {
@@ -65,6 +112,8 @@ footer {
   padding: 1em;
   text-align: center;
   width: 100%;
+  background: $blue;
+  color: white;
 }
 
 .container {
