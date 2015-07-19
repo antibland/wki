@@ -19,7 +19,7 @@ html {
 }
 
 body {
-  background: transparent url(/images/bg.jpg) 0 0 repeat;
+  background: white;
   font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
   font-weight: 300;
   font-size: 1.4rem;
@@ -56,6 +56,16 @@ p {
 }
 
 section
+  position: relative;
+
+  &:last-child
+    .inner
+      padding-bottom: 8em;
+    &:after
+      content: normal;
+      display: none;
+      background: transparent;
+
   &:after
     content: '';
     display: block;
@@ -65,7 +75,7 @@ section
     bottom: -1rem;
 
   &:nth-child(odd)
-    background: gray;
+    background: beige;
     &:after
       background: white;
       transform: rotateZ(0.5deg);
@@ -73,10 +83,8 @@ section
   &:nth-child(even)
     background: white;
     &:after
-      background: gray;
+      background: beige;
       transform: rotateZ(-0.5deg);
-
-  position: relative;
 
   &.lead
     background: rgba(black, 0.5);
@@ -86,29 +94,26 @@ section
       color: white;
     h2
       font-size: 3.5rem;
+      line-height: 3.5rem;
 
     .inner
       padding-top: 5.5em;
 
   .inner
-    padding: 2em;
+    padding: 3.5em 3em 5em;
     line-height: 2.5rem;
     max-width: 68.55em;
     margin: 0 auto;
 
-    &:last-child
-      padding-bottom: 5em;
-
-
-main {
-  background: url(/images/cameras@2x.jpg) 0 0 no-repeat;
-  background-size: cover;
-}
+main
+  .index &
+    background: url(/images/cameras@2x.jpg) 0 0 no-repeat;
+    background-size: cover;
 
 footer {
   position: absolute;
   bottom: 0;
-  height: 3.5em;
+  height: 3.7em;
   padding: 1em;
   text-align: center;
   width: 100%;
