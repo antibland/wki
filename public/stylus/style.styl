@@ -133,12 +133,15 @@ footer {
 }
 
 .box-content
+  box-shadow: $default-bottom-shadow;
   padding: 1em;
   background: white;
   position: relative;
   text-align: center;
   margin-bottom: 4em;
-  box-shadow: $default-bottom-shadow;
+
+  &:last-child
+    margin-bottom: 0;
 
   &> div
     display: flex;
