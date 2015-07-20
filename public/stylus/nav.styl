@@ -2,7 +2,7 @@ nav
   flex: 1;
   display: flex;
   margin: 0 1.25em;
-  top: 0.9em;
+  top: 1em;
   position: relative;
   z-index: 1;
 
@@ -36,7 +36,7 @@ nav
   .menu-list.primary
     display: flex;
     flex: 1;
-    box-shadow: 0 0px 4px rgba(0, 0, 0, 0.5);
+    box-shadow: $box-content-shadow;
 
     for item in $menu-list
       &.{item} > .{item} > .menu-link
