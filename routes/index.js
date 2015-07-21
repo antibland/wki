@@ -9,6 +9,38 @@ router.get('/', function(req, res, next) {
   });
 });
 
+router.get('/about-us', function(req, res, next) {
+  res.render('about-us', {
+    section: 'about-us',
+    title: 'About Us',
+    company_name: req.app.get('company_name')
+  });
+});
+
+router.get('/services', function(req, res, next) {
+  res.render('services', {
+    section: 'services',
+    title: 'Services',
+    company_name: req.app.get('company_name')
+  });
+});
+
+router.get('/resources', function(req, res, next) {
+  res.render('resources', {
+    section: 'resources',
+    title: 'Resources',
+    company_name: req.app.get('company_name')
+  });
+});
+
+router.get('/contact-us', function(req, res, next) {
+  res.render('contact-us', {
+    section: 'contact-us',
+    title: 'Contact Us',
+    company_name: req.app.get('company_name')
+  });
+});
+
 router.get('/itero', function(req, res, next) {
   res.render('itero', {
     section: 'itero',
@@ -37,14 +69,6 @@ router.get('/removable_prosthetics', function(req, res, next) {
   res.render('removable_prosthetics', {
     section: 'removable_prosthetics',
     title: 'Removable Prosthetics',
-    company_name: req.app.get('company_name')
-  });
-});
-
-router.get('/contact', function(req, res, next) {
-  res.render('contact', {
-    section: 'contact',
-    title: 'Contact us',
     company_name: req.app.get('company_name')
   });
 });
