@@ -11,6 +11,9 @@ footer
           menuSubLists   = document.querySelectorAll(".menu-list.sub"),
           hoverListeners = "mouseover mouseout";
 
+      var productDescriptions  = document.querySelectorAll(".box-content-description");
+          maxDescriptionHeight = 220;
+
       function closeAllSubLists() {
         var len   = menuSubLists.length;
 
@@ -75,4 +78,20 @@ footer
           }
         }, false);
       });
+
+      function setContentScroll() {
+        [].forEach.call(productDescriptions, function(el) {
+          var content       = el.querySelector("span"),
+              contentHeight = content.offsetHeight;
+
+          if (contentHeight > maxDescriptionHeight) {
+            el.classList.add('with-scroll');
+          } else {
+            el.classList.remove("with-scroll");
+          }
+        });
+      }
+
+      window.addEventListener("resize", setContentScroll);
+      setContentScroll();
     };
