@@ -6,7 +6,7 @@ nav
   position: relative;
   z-index: 1;
 
-  @media only screen and (max-width: 768px)
+  @media only screen and (max-width: $tablet)
     position: fixed;
     right: -1.7rem;
     width: 22rem;
@@ -25,7 +25,7 @@ nav
     &[aria-hidden=false]
       max-height: 20em;
 
-    @media only screen and (max-width: 768px)
+    @media only screen and (max-width: $tablet)
       transform: translateX(-15.9em);
       top: 0;
 
@@ -42,7 +42,7 @@ nav
       &.{item} > .{item} > .menu-link
         background-color: lighten(#0097de, 80%);
 
-    @media only screen and (max-width: 768px)
+    @media only screen and (max-width: $tablet)
       flex-direction: column;
       transition: 0.3s cubic-bezier(0.48, 0.26, 0.05, 1.07);
       transform: translateX(50em);
@@ -57,7 +57,7 @@ nav
     &.removable_prosthetics
       flex: 1 1 4em;
 
-      @media only screen and (max-width: 768px)
+      @media only screen and (max-width: $tablet)
         flex: 1;
 
     &:last-child > a
@@ -81,6 +81,6 @@ nav
     &:focus
       background-color: lighten(#0097de, 80%);
 
-    @media only screen and (max-width: 768px)
+    @media only screen and (max-width: $tablet)
       border-right: none;
       border-bottom: 1px solid rgba(black, 0.1);
