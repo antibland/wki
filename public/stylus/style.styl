@@ -92,17 +92,6 @@ section
       transform: rotateZ(-0.5deg);
 
   &.lead
-    background:
-      linear-gradient(
-        rgba(0, 0, 0, 0.28),
-        rgba(0, 0, 0, 0.28)
-      ),
-      url(/images/howard_surgery.jpg) no-repeat;
-    padding-bottom: 3rem;
-    background-size: auto 900px;
-    background-position: 50% 0;
-    padding-bottom: 3rem;
-
     h1, h2, p
       color: white;
     h1, h2
@@ -111,8 +100,23 @@ section
       font-size: 3.5rem;
       line-height: 3.5rem;
 
+    background:
+      linear-gradient(
+        rgba(0, 0, 0, 0.28),
+        rgba(0, 0, 0, 0.28)
+      ),
+      url(/images/howard_surgery.jpg) no-repeat;
+    background-size: 100% 800px;
+    background-position: 50% 0;
+
+    @media only screen and (max-width: $jumbo)
+      background-size: auto 800px;
+
+    @media only screen and (max-width: $mobile)
+      background-size: auto 100%;
+
     @media only screen and (max-width: $mobile-small)
-      height: 920px;
+      height: 800px;
 
     .inner
       padding-top: 5em;
@@ -121,7 +125,6 @@ section
         padding-top: 3.5em;
         padding-right: 1.5em;
         padding-left: 1.5em;
-
 
   a:link,
   a:visited
