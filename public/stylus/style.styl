@@ -168,9 +168,10 @@ footer {
   &> div
     display: flex;
     flex-direction: row;
-    margin-bottom: 2em;
     justify-content: center;
     align-items: flex-start;
+    margin-bottom: 2em;
+    padding-top: 6em;
 
     @media only screen and (max-width: $mobile)
       flex-wrap: wrap;
@@ -255,3 +256,54 @@ footer {
   &:active
     width: 8.3em;
     box-shadow: 0 0 3px -3px rgba(0,0,0,0.2);
+
+
+
+.ribbon-container
+  display: inline-block;
+  line-height: 1;
+  position: absolute;
+  left: 0;
+  top: 3em;
+
+  img
+    vertical-align: middle;
+
+  .ribbon
+    background-color: $blue;
+    font-size: 2.2rem;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    letter-spacing: 1px;
+    margin-right: 1em;
+    padding: 0.75em 1.25em 0.75em 0.75em;
+    border-radius: 0 0.4em 0.4em 0;
+    background-image: linear-gradient(to right, rgba(0,0,0,0) 0%, rgba(0,0,0,.1) 100%);
+    box-shadow: inset 0 .062em 0 rgba(255,255,255,.6), 0 .125em .25em rgba(0,0,0,.2);
+    color: #fff;
+    text-shadow: 0 -.062em 0 rgba(0,0,0,.2);
+    white-space: nowrap;
+
+    &:before,
+    &:after
+      position: absolute;
+      background-color: inherit;
+      content: "";
+
+    &:before
+      bottom: 0;
+      left: -.5em;
+      width: .5em;
+      height: 3em;
+      border-radius: 0 0 0 .5em;
+      background-image: linear-gradient(to right, rgba(0,0,0,.2) 0%, rgba(0,0,0,0) 100%);
+
+    &:after
+      top: -1em;
+      left: -.5em;
+      width: .5em;
+      height: 1em;
+      border-radius: 0.5em 0 0 0.5em;
+      background-image: linear-gradient(to right, rgba(0,0,0,0) 0%, rgba(0,0,0,.2) 100%);
+      box-shadow: 0 .062em 0 rgba(255,255,255,.6);
