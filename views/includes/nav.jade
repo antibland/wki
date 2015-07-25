@@ -13,7 +13,7 @@ nav(id='main-nav' aria-label='main navigation')
   ul(class='#{section} menu-list primary', role='menubar', aria-hidden='false')
     each item, index in menu_list
       li(class='#{item} menu-item primary', role='menuitem')
-        a(href='/#{item}', class='menu-link') #{titles[index]}
+        a(href='/#{item}', class='menu-link menu-toggle') #{titles[index]}
 
         if item == 'services'
             ul(class='#{section} menu-list sub', role='menubar', aria-hidden='true')

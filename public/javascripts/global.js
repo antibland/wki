@@ -1,10 +1,11 @@
 window.onload = function() {
-  var toggleNav      = document.getElementById("toggle-nav"),
-      menuListItems  = document.querySelectorAll(".menu-list.primary > .menu-item"),
-      menuAnchors    = document.querySelectorAll(".menu-item.primary > .menu-link"),
-      menuSubLinks   = document.querySelectorAll(".menu-link.sub"),
-      menuSubLists   = document.querySelectorAll(".menu-list.sub"),
-      hoverListeners = "mouseover mouseout";
+  var toggleNav       = document.getElementById("toggle-nav"),
+      menuListItems   = document.querySelectorAll(".menu-list.primary > .menu-item"),
+      menuToggles     = document.querySelectorAll(".menu-item.primary > .menu-toggle"),
+      menuSubLinks    = document.querySelectorAll(".menu-link.sub"),
+      menuSubLists    = document.querySelectorAll(".menu-list.sub"),
+      hoverListeners  = "mouseover mouseout",
+      toggleListeners = "focus click";
 
   var productDescriptions  = document.querySelectorAll(".box-content-description");
       maxDescriptionHeight = 220;
@@ -28,6 +29,13 @@ window.onload = function() {
 
   function subListsAreOpen() {
     return document.querySelectorAll(".menu-list.sub[aria-hidden=false]").length;
+  }
+
+  function hasNestedList(el) {
+    if (el.nextSibling !== null && el.nextSibling.nodeName === "UL") {
+      return true;
+    }
+    return false;
   }
 
   toggleNav.addEventListener("click", function() {
@@ -60,18 +68,24 @@ window.onload = function() {
     });
   });
 
-  [].forEach.call(menuAnchors, function(el) {
-    el.addEventListener("focus", function() {
-      closeAllSubLists();
-      setMenuSubLinkTabbing();
+  toggleListeners.split(" ").forEach(function(evt) {
+    [].forEach.call(menuToggles, function(el) {
+      el.addEventListener(evt, function(inner_evt) {
+        if (evt === "click" && hasNestedList(el)) {
+          inner_evt.preventDefault();
+        }
 
-      if (el.parentNode.querySelector(".menu-list.sub")) {
-        var subList = el.parentNode.querySelector(".menu-list.sub");
-        subList.setAttribute("aria-hidden", "false");
-      } else {
-        setMenuSubLinkTabbing(-1);
-      }
-    }, false);
+        closeAllSubLists();
+        setMenuSubLinkTabbing();
+
+        if (el.parentNode.querySelector(".menu-list.sub")) {
+          var subList = el.parentNode.querySelector(".menu-list.sub");
+          subList.setAttribute("aria-hidden", "false");
+        } else {
+          setMenuSubLinkTabbing(-1);
+        }
+      }, false);
+    })
   });
 
   function setContentScroll() {
