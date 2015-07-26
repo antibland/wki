@@ -115,7 +115,7 @@ section
     @media only screen and (max-width: $mobile)
       background-size: auto 100%;
 
-    .inner
+    .inner:first-child
       padding-top: 5em;
 
       @media only screen and (max-width: $mobile)
@@ -128,10 +128,13 @@ section
     color: $peach;
 
   .inner
-    padding: 3.5em 3em 5em;
+    padding: 2.5em 3em 5em;
     line-height: 2.5rem;
     max-width: 68.55em;
     margin: 0 auto;
+
+    &:first-child
+      padding-top: 3.5em;
 
 footer {
   position: absolute;
@@ -158,6 +161,7 @@ footer {
   position: relative;
   text-align: center;
   margin-bottom: 4em;
+  border: 1px solid rgba(0, 0, 0, 0.1);
 
   &:last-child
     margin-bottom: 0;
@@ -167,7 +171,6 @@ footer {
     flex-direction: row;
     justify-content: center;
     align-items: flex-start;
-    margin-bottom: 2em;
     padding-top: 6em;
 
     @media only screen and (max-width: $mobile)
@@ -183,6 +186,7 @@ footer {
 
   @media only screen and (max-width: $mobile)
     margin: 0 auto 1em;
+    flex: auto;
 
 .box-content-description
   text-align: left;
@@ -240,7 +244,7 @@ footer {
   padding: 1rem;
   text-decoration: none;
   cursor: pointer;
-  margin: 0 auto 1em;
+  margin: 1em auto;
   display: block;
   text-align: center;
   width: 8em;
