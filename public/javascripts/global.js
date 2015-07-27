@@ -8,7 +8,7 @@ window.onload = function() {
       toggleListeners = "focus click";
 
   var productDescriptions  = document.querySelectorAll(".box-content-description");
-      maxDescriptionHeight = 220;
+      maxDescriptionHeight = 230;
 
   function closeAllSubLists() {
     var len   = menuSubLists.length;
