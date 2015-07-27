@@ -1,0 +1,79 @@
+form
+  width: 100%;
+
+.form-row
+  transition: 0.3s width;
+  display: inline-block;
+  width: 50%;
+
+  &.full
+    width: 100%;
+
+  @media only screen and (max-width: $tablet)
+    width: 100%;
+
+.form-item
+  padding: 0.5em 1.5em;
+
+label
+  cursor: pointer;
+  margin-bottom: 0.25em;
+  display: inline-block;
+  width: 100%;
+
+  &[aria-required=true]
+    &:after
+      content: 'required';
+      color: red;
+      float: right;
+
+[type=checkbox]
+  display: inline-block;
+  vertical-align: middle;
+
+[type=text],
+[type=email],
+[type=password],
+[type=tel],
+textarea
+  font-size: 1.5rem;
+  padding: 0.5em 0.75em;
+
+[type=checkbox],
+[type=text],
+[type=email],
+[type=password]
+  outline: none;
+
+  &:focus
+    border: 1px solid gray;
+
+[type=text],
+[type=email],
+[type=tel],
+[type=password],
+textarea
+  border-radius: 0.5em;
+  border: 1px solid lightgray;
+  display: block;
+  width: 100%;
+  position: relative;
+  top: -2px;
+
+  &.placeholder {
+    color: lightgray;
+  }
+  &:-moz-placeholder {
+    color: lightgray;
+  }
+  &::-moz-placeholder {
+    color: lightgray;
+  }
+  &:-ms-input-placeholder {
+    color: lightgray;
+  }
+  &::-webkit-input-placeholder {
+    color: lightgray;
+  }
+
+

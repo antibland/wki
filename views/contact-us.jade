@@ -4,3 +4,23 @@ block content
   section
     .inner
       h1= title
+      form
+        .form-row
+          .form-item
+            label(for='reason', aria-required='true') Why are you contacting us?
+            input(name='reason', id='reason', type='text', required)
+          .form-item
+            label(for='name', aria-required='true') Name
+            input(placeholder='Name', name='name', id='name', type='text', required)
+        .form-row
+          .form-item
+            label(for='email', aria-required='true') Email address
+            input(placeholder='Email', name='email', id='email', type='email', required)
+          .form-item
+            label(for='phone') Phone (optional)
+            input(placeholder='Phone (optional)', name='phone', id='phone', type='tel')
+        .form-row.full
+          .form-item
+            label(for='message', aria-required='true') Message
+            textarea(placeholder='Your Message', name='message', id='message', required)
+        input(value='Send', class='button', type='submit')
