@@ -2,18 +2,24 @@ form
   width: 100%;
 
 .form-row
-  transition: 0.3s width;
+  display: block;
+  width: 100%;
+
+.form-item
+  transition: 0.2s;
   display: inline-block;
   width: 50%;
-
-  &.full
-    width: 100%;
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
 
   @media only screen and (max-width: $tablet)
     width: 100%;
 
-.form-item
-  padding: 0.5em 1.5em;
+  &:first-child
+    padding-right: 3em;
+
+    @media only screen and (max-width: $tablet)
+      padding-right: 0;
 
 label
   cursor: pointer;
