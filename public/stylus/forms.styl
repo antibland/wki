@@ -33,22 +33,17 @@ label
       color: red;
       float: right;
 
-[type=checkbox]
-  display: inline-block;
-  vertical-align: middle;
-
 [type=text],
 [type=email],
-[type=password],
 [type=tel],
 textarea
   font-size: 1.5rem;
   padding: 0.5em 0.75em;
 
-[type=checkbox],
 [type=text],
 [type=email],
-[type=password]
+[type=tel],
+textarea
   outline: none;
 
   &:focus
@@ -57,7 +52,6 @@ textarea
 [type=text],
 [type=email],
 [type=tel],
-[type=password],
 textarea
   border-radius: 0.5em;
   border: 1px solid lightgray;
@@ -82,4 +76,17 @@ textarea
     color: lightgray;
   }
 
+[type=tel],
+[type=email]
+  background-repeat: no-repeat;
+  background-size: 18px 18px;
+  background-position: 4px 50%;
 
+[type=tel]
+  padding-left: 1.5em;
+  background-image: url(/images/icons/phone.png);
+
+[type=email]
+  background-size: 16px 16px;
+  padding-left: 1.7em;
+  background-image: url(/images/icons/email.png);
