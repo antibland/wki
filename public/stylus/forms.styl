@@ -76,17 +76,30 @@ textarea
     color: lightgray;
   }
 
+[id='name'],
+[type=email],
 [type=tel],
-[type=email]
+[id='reason']
   background-repeat: no-repeat;
-  background-position: 4px 50%;
+  background-position-y: 50%;
+  padding-left: 1.7em;
 
-[type=tel]
-  background-size: 18px 18px;
-  padding-left: 1.5em;
-  background-image-retina('/images/icons/phone', png, 18px, 18px);
+[id='name']
+  background-size: 16px 16px;
+  background-position-x: 4px;
+  background-image-retina('/images/icons/user', png, 16px, 16px);
 
 [type=email]
   background-size: 16px 16px;
-  padding-left: 1.7em;
+  background-position-x: 5px;
   background-image-retina('/images/icons/email', png, 16px, 16px);
+
+[type=tel]
+  background-size: 18px 18px;
+  background-position-x: 6px;
+  background-image-retina('/images/icons/phone', png, 18px, 18px);
+
+[id='reason']
+  background-size: 11px 18px;
+  background-position-x: 8px;
+  background-image-retina('/images/icons/bulb', png, 11px, 18px);
