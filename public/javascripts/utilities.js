@@ -20,15 +20,15 @@ var utilities = (function() {
 
       return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
     },
-    loadMap: function(id, lat, lng, title) {
+    loadMap: function(id, lat, lng, title, zoom) {
       var mapDiv = document.getElementById(id),
           latlng = new google.maps.LatLng(lat, lng),
           mapOptions = {
-            zoom: 16,
+            zoom: zoom || 17,
             center: latlng,
             mapTypeId: google.maps.MapTypeId.ROADMAP,
             scrollwheel: false,
-            disableDefaultUI: true
+            mapTypeControl: false
           },
           marker;
 

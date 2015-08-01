@@ -1,7 +1,7 @@
 extends layout
 
 block content
-  section
+  section.no-slant
     .inner
       h1= title
       form
@@ -24,3 +24,20 @@ block content
             label(for='message', aria-required='true') Message
             textarea(placeholder='Your Message', name='message', id='message', required)
         input(value='Send', class='button', type='submit')
+  section
+    .inner.full
+      h2(id='map-header') Our Location
+
+      include ./includes/business-address
+
+      div(
+        id='map',
+        aria-labelledby='map-header',
+        aria-describedby='business-address'
+      )
+
+    script(src="https://maps.googleapis.com/maps/api/js?v=3&sensor=false")
+    script.
+      google.maps.event.addDomListener(window, 'load', function() {
+        utilities.loadMap('map', 41.345012, -72.975545, 'White Knight Implants');
+      });
