@@ -50,8 +50,7 @@ h2
 
   .contact-us &
     margin: 0;
-    padding: 1em;
-    background-color: #e9e9e9;
+    padding: 1em 1em 0.75em;
 
 h3 {
   font-size: 2.2rem;
@@ -91,7 +90,10 @@ section
     bottom: -1rem;
 
   &:nth-child(odd)
-    background: $lighter-gray;
+    background-color: $lighter-gray;
+    background-image-retina('/images/weave', png, 60px, 60px);
+    background-repeat: repeat;
+
     &:after
       background: white;
       transform: rotateZ(0.5deg);
@@ -99,7 +101,9 @@ section
   &:nth-child(even)
     background: white;
     &:after
-      background: $lighter-gray;
+      background-color: $lighter-gray;
+      background-image-retina('/images/weave', png, 60px, 60px);
+      background-repeat: repeat;
       transform: rotateZ(-0.5deg);
 
   &.lead
