@@ -44,7 +44,7 @@ window.onload = function() {
   document.addEventListener("keydown", function(evt) {
     evt = evt || window.event;
 
-    if (evt.keyCode === 27) {
+    if (evt.keyCode === utilities.keys.escape) {
       closeAllSubLists();
       setMenuSubLinkTabbing(-1);
       toggleNav.classList.remove("nav-opened");
