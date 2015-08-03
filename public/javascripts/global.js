@@ -38,9 +38,12 @@ window.onload = function() {
     return false;
   }
 
-  toggleNav.addEventListener("click", function() {
-    this.classList.toggle("nav-opened");
-  });
+  toggleNav.addEventListener(
+    utilities.isTouchDevice() ? "touchstart" : "click",
+    function() {
+      this.classList.toggle("nav-opened");
+    }
+  ), false;
 
   document.addEventListener("keydown", function(evt) {
     evt = evt || window.event;
@@ -49,7 +52,7 @@ window.onload = function() {
       closeAllSubLists();
       setMenuSubLinkTabbing(-1);
     }
-  });
+  }, false);
 
   hoverListeners.split(" ").forEach(function(evt) {
     var subList, ariaState;
@@ -101,6 +104,6 @@ window.onload = function() {
     });
   }
 
-  window.addEventListener("resize", setContentScroll);
+  window.addEventListener("resize", setContentScroll, false);
   setContentScroll();
 };

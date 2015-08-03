@@ -88,7 +88,7 @@ var utilities = (function() {
     },
 
     isTouchDevice: function() {
-      return document.querySelector("html").classList.contains('touch');
+      return 'ontouchstart' in document.documentElement;
     },
 
     loadTemplate: function(template, destination) {
