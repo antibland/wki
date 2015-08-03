@@ -2,6 +2,9 @@ header
   background-color: $blue;
   position: relative;
 
+.container
+  transform-style: preserve-3d;
+
 .phone
   transition: 0.3s;
   position: absolute;
@@ -9,14 +12,14 @@ header
   font-weight: bold;
   font-size: 1.6rem;
   left: 1em;
-  top: calc(50% - 1rem);
+  top: 50%;
 
   @media only screen and (max-width: $mobile)
     left: 50%;
     transform: translateX(-30%);
 
   @media only screen and (max-width: $mobile-xsmall)
-    top: -10em;
+    opacity: 0;
 
 .logo
   padding: 1em 0;
