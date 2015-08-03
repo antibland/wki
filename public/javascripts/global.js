@@ -27,10 +27,6 @@ window.onload = function() {
     }
   }
 
-  function subListsAreOpen() {
-    return document.querySelectorAll(".menu-list.sub[aria-hidden=false]").length;
-  }
-
   function hasNestedList(el) {
     if (el.nextSibling !== null && el.nextSibling.nodeName === "UL") {
       return true;
@@ -48,9 +44,10 @@ window.onload = function() {
   document.addEventListener("keydown", function(evt) {
     evt = evt || window.event;
 
-    if (evt.keyCode === 27 && subListsAreOpen()) {
+    if (evt.keyCode === 27) {
       closeAllSubLists();
       setMenuSubLinkTabbing(-1);
+      toggleNav.classList.remove("nav-opened");
     }
   }, false);
 
