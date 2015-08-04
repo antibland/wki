@@ -2,6 +2,8 @@
 - var menu_list       = ['about-us', 'services', 'resources', 'contact-us']
 - var services_titles = ['Itero', 'Ceramics', 'Implants', 'Removable Prosthetics']
 - var services_list   = ['itero', 'ceramics', 'implants', 'removable_prosthetics']
+- var about_titles    = ['The lab', 'Lab Photos']
+- var about_list      = ['the-lab', 'lab-photos']
 
 nav(id='main-nav' aria-label='main navigation')
   button(id='toggle-nav', aria-controls='main-nav')
@@ -14,6 +16,12 @@ nav(id='main-nav' aria-label='main navigation')
     each item, index in menu_list
       li(class='#{item} menu-item primary', role='menuitem')
         a(href='/#{item}', class='menu-link menu-toggle') #{titles[index]}
+
+        if item == 'about-us'
+           ul(class='#{section} menu-list sub', role='menubar', aria-hidden='true')
+                each sub_item, index in about_list
+                  li(class='#{item} menu-item sub', role='menuitem')
+                    a(href='/#{about_list[index]}', class='menu-link sub') #{about_titles[index]}
 
         if item == 'services'
             ul(class='#{section} menu-list sub', role='menubar', aria-hidden='true')

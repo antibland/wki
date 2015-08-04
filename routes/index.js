@@ -17,6 +17,22 @@ router.get('/about-us', function(req, res, next) {
   });
 });
 
+router.get('/the-lab', function(req, res, next) {
+  res.render('the-lab', {
+    section: 'the-lav',
+    title: 'The Lab',
+    company_name: req.app.get('company_name')
+  });
+});
+
+router.get('/lab-photos', function(req, res, next) {
+  res.render('lab-photos', {
+    section: 'lab-photos',
+    title: 'Lab Photos',
+    company_name: req.app.get('company_name')
+  });
+});
+
 router.get('/services', function(req, res, next) {
   res.render('services', {
     section: 'services',
