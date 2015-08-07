@@ -1,1 +1,1 @@
-address .org,address a{font-weight:700}address .org,address .street-address{display:block}#map{max-width:100%;height:600px}@media only screen and (max-width:$mobile){#map{height:400px}}address{font-style:normal;padding:0 2em 3em}
+address .org,address a{font-weight:700}address .org,address .street-address{display:block}#map{max-width:100%;height:600px}@media only screen and (max-width:$mobile){#map{height:400px}}address{font-style:normal;padding:0 2em 2em}
