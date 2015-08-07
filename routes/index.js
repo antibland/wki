@@ -9,14 +9,6 @@ router.get('/', function(req, res, next) {
   });
 });
 
-router.get('/about-us', function(req, res, next) {
-  res.render('about-us', {
-    section: 'about-us',
-    title: 'About Us',
-    company_name: req.app.get('company_name')
-  });
-});
-
 router.get('/the-lab', function(req, res, next) {
   res.render('the-lab', {
     section: 'the-lab',
