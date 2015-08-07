@@ -9,29 +9,6 @@ router.get('/', function(req, res, next) {
   });
 });
 
-router.get('/the-lab', function(req, res, next) {
-  res.render('the-lab', {
-    section: 'the-lab',
-    title: 'The Lab',
-    company_name: req.app.get('company_name')
-  });
-});
-
-router.get('/lab-photos', function(req, res, next) {
-  res.render('lab-photos', {
-    section: 'lab-photos',
-    title: 'Lab Photos',
-    company_name: req.app.get('company_name')
-  });
-});
-
-router.get('/services', function(req, res, next) {
-  res.render('services', {
-    section: 'services',
-    title: 'Services',
-    company_name: req.app.get('company_name')
-  });
-});
 
 router.get('/resources', function(req, res, next) {
   res.render('resources', {
@@ -48,6 +25,30 @@ router.get('/contact-us', function(req, res, next) {
     company_name: req.app.get('company_name')
   });
 });
+
+//////////////
+// About Us //
+/////////////
+
+router.get('/the-lab', function(req, res, next) {
+  res.render('the-lab', {
+    section: 'the-lab',
+    title: 'The Lab',
+    company_name: req.app.get('company_name')
+  });
+});
+
+router.get('/lab-photos', function(req, res, next) {
+  res.render('lab-photos', {
+    section: 'lab-photos',
+    title: 'Lab Photos',
+    company_name: req.app.get('company_name')
+  });
+});
+
+//////////////////
+// Lab Services //
+/////////////////
 
 router.get('/itero', function(req, res, next) {
   res.render('itero', {
