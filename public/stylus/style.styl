@@ -127,6 +127,7 @@ section
     h2
       font-size: 3.5rem;
       line-height: 3.5rem;
+      padding-left: 0;
     p
       font-size: 1.8rem;
 
@@ -154,6 +155,7 @@ section
           padding-top: 3.5em;
           padding-right: 1.5em;
           padding-left: 1.5em;
+
     .itero &
       background:
         linear-gradient(
@@ -164,6 +166,31 @@ section
 
       background-size: 100% 800px;
       background-position: 50% 35%;
+
+      @media only screen and (max-width: $jumbo)
+        background-size: auto 800px;
+
+      @media only screen and (max-width: $mobile)
+        background-size: auto 100%;
+
+      .inner:first-child
+        padding-top: 5em;
+
+        @media only screen and (max-width: $mobile)
+          padding-top: 3.5em;
+          padding-right: 1.5em;
+          padding-left: 1.5em;
+
+    .contact-us &
+      background:
+        linear-gradient(
+          rgba(0, 0, 0, 0.28),
+          rgba(0, 0, 0, 0.28)
+        ),
+        url(/images/services/contact_us/landing.jpg) no-repeat;
+
+      background-size: 100% 800px;
+      background-position: 50% 70%;
 
       @media only screen and (max-width: $jumbo)
         background-size: auto 800px;
