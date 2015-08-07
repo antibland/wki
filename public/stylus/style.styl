@@ -58,7 +58,15 @@ h3 {
   font-size: 2.2rem;
 }
 
-p {
+main ul {
+  padding-left: 3em;
+
+  @media only screen and (max-width: $mobile-small) {
+    padding-left: 1em;
+  }
+}
+
+p, main li {
   font-size: 1.6rem;
   margin-bottom: 1em;
   line-height: 1.8em;
@@ -121,28 +129,54 @@ section
     p
       font-size: 1.8rem;
 
-    background:
-      linear-gradient(
-        rgba(0, 0, 0, 0.28),
-        rgba(0, 0, 0, 0.28)
-      ),
-      url(/images/howard_surgery.jpg) no-repeat;
-    background-size: 100% 800px;
-    background-position: 50% 0;
+    .index &
+      background:
+        linear-gradient(
+          rgba(0, 0, 0, 0.28),
+          rgba(0, 0, 0, 0.28)
+        ),
+        url(/images/howard_surgery.jpg) no-repeat;
 
-    @media only screen and (max-width: $jumbo)
-      background-size: auto 800px;
+      background-size: 100% 800px;
+      background-position: 50% 0;
 
-    @media only screen and (max-width: $mobile)
-      background-size: auto 100%;
-
-    .inner:first-child
-      padding-top: 5em;
+      @media only screen and (max-width: $jumbo)
+        background-size: auto 800px;
 
       @media only screen and (max-width: $mobile)
-        padding-top: 3.5em;
-        padding-right: 1.5em;
-        padding-left: 1.5em;
+        background-size: auto 100%;
+
+      .inner:first-child
+        padding-top: 5em;
+
+        @media only screen and (max-width: $mobile)
+          padding-top: 3.5em;
+          padding-right: 1.5em;
+          padding-left: 1.5em;
+    .itero &
+      background:
+        linear-gradient(
+          rgba(0, 0, 0, 0.28),
+          rgba(0, 0, 0, 0.28)
+        ),
+        url(/images/services/itero/landing.jpg) no-repeat;
+
+      background-size: 100% 800px;
+      background-position: 50% 35%;
+
+      @media only screen and (max-width: $jumbo)
+        background-size: auto 800px;
+
+      @media only screen and (max-width: $mobile)
+        background-size: auto 100%;
+
+      .inner:first-child
+        padding-top: 5em;
+
+        @media only screen and (max-width: $mobile)
+          padding-top: 3.5em;
+          padding-right: 1.5em;
+          padding-left: 1.5em;
 
   a:link,
   a:visited
