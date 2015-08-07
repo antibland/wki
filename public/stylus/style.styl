@@ -79,6 +79,9 @@ p, main li {
   }
 }
 
+.the-lab section p:first-child:first-letter
+  font-size: 3.4rem;
+
 section
   position: relative;
 
@@ -199,6 +202,34 @@ section
         background-size: 100% 100%;
 
       @media only screen and (max-width: $mobile-small)
+        background-size: auto 100%;
+
+      .inner:first-child
+        padding-top: 5em;
+
+        @media only screen and (max-width: $mobile)
+          padding-top: 3.5em;
+          padding-right: 1.5em;
+          padding-left: 1.5em;
+
+    .the-lab &
+      background:
+        linear-gradient(
+          rgba(0, 0, 0, 0.28),
+          rgba(0, 0, 0, 0.28)
+        ),
+        url(/images/the_lab/landing.jpg) no-repeat;
+
+      background-size: 100% 800px;
+      background-position: 50% 45%;
+
+      @media only screen and (max-width: $tablet)
+        background-size: auto 800px;
+
+      @media only screen and (max-width: $mobile)
+        background-size: 100% 100%;
+
+      @media only screen and (max-width: $mobile-xsmall)
         background-size: auto 100%;
 
       .inner:first-child

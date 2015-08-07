@@ -19,7 +19,7 @@ router.get('/about-us', function(req, res, next) {
 
 router.get('/the-lab', function(req, res, next) {
   res.render('the-lab', {
-    section: 'the-lav',
+    section: 'the-lab',
     title: 'The Lab',
     company_name: req.app.get('company_name')
   });
