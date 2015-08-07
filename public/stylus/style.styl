@@ -134,14 +134,7 @@ section
     p
       font-size: 1.8rem;
 
-    .index &
-      background:
-        linear-gradient(
-          rgba(0, 0, 0, 0.28),
-          rgba(0, 0, 0, 0.28)
-        ),
-        url(/images/howard_surgery.jpg) no-repeat;
-
+    +landing-page-image('index', '/images/howard_surgery.jpg')
       background-size: 100% 800px;
       background-position: 50% 0;
 
@@ -151,22 +144,7 @@ section
       @media only screen and (max-width: $mobile)
         background-size: auto 100%;
 
-      .inner:first-child
-        padding-top: 5em;
-
-        @media only screen and (max-width: $mobile)
-          padding-top: 3.5em;
-          padding-right: 1.5em;
-          padding-left: 1.5em;
-
-    .itero &
-      background:
-        linear-gradient(
-          rgba(0, 0, 0, 0.28),
-          rgba(0, 0, 0, 0.28)
-        ),
-        url(/images/services/itero/landing.jpg) no-repeat;
-
+    +landing-page-image('itero', '/images/services/itero/landing.jpg')
       background-size: 100% 800px;
       background-position: 50% 35%;
 
@@ -176,22 +154,7 @@ section
       @media only screen and (max-width: $mobile)
         background-size: auto 100%;
 
-      .inner:first-child
-        padding-top: 5em;
-
-        @media only screen and (max-width: $mobile)
-          padding-top: 3.5em;
-          padding-right: 1.5em;
-          padding-left: 1.5em;
-
-    .contact-us &
-      background:
-        linear-gradient(
-          rgba(0, 0, 0, 0.28),
-          rgba(0, 0, 0, 0.28)
-        ),
-        url(/images/services/contact_us/landing.jpg) no-repeat;
-
+    +landing-page-image('contact-us', '/images/contact_us/landing.jpg')
       background-size: 100% 800px;
       background-position: 50% 70%;
 
@@ -204,22 +167,7 @@ section
       @media only screen and (max-width: $mobile-small)
         background-size: auto 100%;
 
-      .inner:first-child
-        padding-top: 5em;
-
-        @media only screen and (max-width: $mobile)
-          padding-top: 3.5em;
-          padding-right: 1.5em;
-          padding-left: 1.5em;
-
-    .the-lab &
-      background:
-        linear-gradient(
-          rgba(0, 0, 0, 0.28),
-          rgba(0, 0, 0, 0.28)
-        ),
-        url(/images/the_lab/landing.jpg) no-repeat;
-
+    +landing-page-image('the-lab', '/images/the_lab/landing.jpg')
       background-size: 100% 800px;
       background-position: 50% 45%;
 
@@ -231,14 +179,6 @@ section
 
       @media only screen and (max-width: $mobile-xsmall)
         background-size: auto 100%;
-
-      .inner:first-child
-        padding-top: 5em;
-
-        @media only screen and (max-width: $mobile)
-          padding-top: 3.5em;
-          padding-right: 1.5em;
-          padding-left: 1.5em;
 
   a:link,
   a:visited

@@ -12,3 +12,22 @@ background-image-retina($file, $type, $width, $height)
       -moz-background-size: $width $height;
       -o-background-size: $width $height;
       background-size: $width $height;
+
+landing-page-image($page, $url)
+  .{$page} &
+    background:
+      linear-gradient(
+        rgba(0, 0, 0, 0.28),
+        rgba(0, 0, 0, 0.28)
+      ),
+      url($url) no-repeat;
+
+    {block}
+
+    .inner:first-child
+      padding-top: 5em;
+
+      @media only screen and (max-width: $mobile)
+        padding-top: 3.5em;
+        padding-right: 1.5em;
+        padding-left: 1.5em;
