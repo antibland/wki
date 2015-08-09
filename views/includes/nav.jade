@@ -1,9 +1,11 @@
-- var titles          = ['About Us', 'Lab Services', 'Resources', 'Contact Us']
-- var menu_list       = ['about-us', 'lab-services', 'resources', 'contact-us']
-- var services_titles = ['Itero', 'Ceramics', 'Implants', 'Removable Prosthetics']
-- var services_list   = ['itero', 'ceramics', 'implants', 'removable_prosthetics']
-- var about_titles    = ['The lab', 'Lab Photos']
-- var about_list      = ['the-lab', 'lab-photos']
+- var titles           = ['About Us', 'Lab Services', 'Resources', 'Contact Us']
+- var menu_list        = ['about-us', 'lab-services', 'resources', 'contact-us']
+- var services_titles  = ['Itero', 'Ceramics', 'Implants', 'Removable Prosthetics']
+- var services_list    = ['itero', 'ceramics', 'implants', 'removable_prosthetics']
+- var resources_titles = ['Rx Form', 'Shipping Instructions']
+- var resources_list   = ['rx-form.pdf', 'shipping-instructions']
+- var about_titles     = ['The lab', 'Lab Photos']
+- var about_list       = ['the-lab', 'lab-photos']
 
 nav(id='main-nav' aria-label='main navigation')
   button(id='toggle-nav', aria-controls='main-nav')
@@ -29,3 +31,11 @@ nav(id='main-nav' aria-label='main navigation')
                 li(class='#{item} menu-item sub', role='menuitem')
                   a(href='/#{services_list[index]}', class='menu-link sub') #{services_titles[index]}
 
+        if item == 'resources'
+            ul(class='#{section} menu-list sub', role='menubar', aria-hidden='true')
+              each sub_item, index in resources_list
+                li(class='#{item} menu-item sub', role='menuitem')
+                  if resources_titles[index] == 'Rx Form'
+                    a(href='/#{resources_list[index]}', class='menu-link sub', target="_blank") #{resources_titles[index]}
+                  else
+                    a(href='/#{resources_list[index]}', class='menu-link sub') #{resources_titles[index]}

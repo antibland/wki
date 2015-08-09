@@ -167,6 +167,19 @@ section
       @media only screen and (max-width: $mobile-small)
         background-size: auto 100%;
 
+    +landing-page-image('shipping-instructions', '/images/resources/shipping_instructions/landing.jpg', 0.1)
+      background-size: 100% 800px;
+      background-position: 20% 20%;
+
+      @media only screen and (max-width: $jumbo)
+        background-size: auto 800px;
+
+      @media only screen and (max-width: $mobile)
+        background-size: 100% 100%;
+
+      @media only screen and (max-width: $mobile-small)
+        background-size: auto 100%;
+
     +landing-page-image('the-lab', '/images/the_lab/landing.jpg')
       background-size: 100% 800px;
       background-position: 50% 45%;
@@ -372,3 +385,6 @@ footer
       border-radius: 0.55em 0 0 0.55em;
       background-image: linear-gradient(to right, rgba(0,0,0,0) 0%, rgba(0,0,0,.2) 100%);
       box-shadow: 0 .062em 0 rgba(255,255,255,.6);
+
+.zero-bottom-margin
+  margin-bottom: 0;

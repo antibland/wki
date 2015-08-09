@@ -10,10 +10,10 @@ router.get('/', function(req, res, next) {
 });
 
 
-router.get('/resources', function(req, res, next) {
-  res.render('resources', {
-    section: 'resources',
-    title: 'Resources',
+router.get('/shipping-instructions', function(req, res, next) {
+  res.render('shipping-instructions', {
+    section: 'shipping-instructions',
+    title: 'Shipping Instructions',
     company_name: req.app.get('company_name')
   });
 });
