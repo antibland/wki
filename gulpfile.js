@@ -12,7 +12,7 @@ gulp.task('compress', function() {
   return gulp.src(['public/javascripts/utilities.js', 'public/javascripts/global.js'])
     .pipe(uglify())
     .pipe(concat('app.min.js'))
-    .pipe(gulp.dest('dist/js'));
+    .pipe(gulp.dest('public/dist/js'));
 });
 
 gulp.task('build-css', function() {
