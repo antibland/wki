@@ -9,10 +9,15 @@ var livereload = require('gulp-livereload');
 var gutil = require('gulp-util');
 
 gulp.task('compress', function() {
-  return gulp.src(['public/javascripts/utilities.js', 'public/javascripts/global.js'])
+  return gulp.src([
+      'public/javascripts/utilities.js',
+      'public/javascripts/dropdown.js',
+      'public/javascripts/global.js'
+    ])
     .pipe(uglify())
     .pipe(concat('app.min.js'))
-    .pipe(gulp.dest('public/dist/js'));
+    .pipe(gulp.dest('public/dist/js'))
+    .pipe(livereload());
 });
 
 gulp.task('build-css', function() {
