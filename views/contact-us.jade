@@ -11,7 +11,7 @@ block content
         .form-row
           .form-item
             label(for='reason', aria-required='true') Why are you contacting us?
-            input(name='reason', id='reason', type='text', required)
+            input(name='reason', value='#{subject}' id='reason', type='text', required)
           .form-item
             label(for='name', aria-required='true') Name
             input(placeholder='Name', name='name', id='name', type='text', required)

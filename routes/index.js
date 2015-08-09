@@ -22,6 +22,7 @@ router.get('/contact-us', function(req, res, next) {
   res.render('contact-us', {
     section: 'contact-us',
     title: 'Contact Us',
+    subject: req.query.subject || "",
     company_name: req.app.get('company_name')
   });
 });
