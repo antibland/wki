@@ -1,6 +1,11 @@
 extends layout
 
 block content
+  if(typeof msg !== 'undefined')
+
+    div(class='message', id='dismiss-message')
+      a(href='#dismiss-message', aria-label='Click or touch to dismiss message')
+        p= msg
   - var _subject = subject ? subject : "General Question";
   section.no-slant.lead
     .inner
@@ -8,7 +13,7 @@ block content
       h2 We'll Be In Touch.
   section.no-slant
     .inner
-      form
+      form(action='/contact-us', method='post')
         .form-row
           .form-item
             label(for='reason', aria-required='true') Why are you contacting us?

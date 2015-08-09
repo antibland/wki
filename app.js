@@ -2,10 +2,10 @@ var express = require('express');
 var path = require('path');
 var favicon = require('serve-favicon');
 var logger = require('morgan');
+var nodemailer = require('nodemailer');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var routes = require('./routes/index');
-var users = require('./routes/users');
 
 var app = express();
 
@@ -22,7 +22,48 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', routes);
-app.use('/users', users);
+
+app.post('/contact-us', function(req, res) {
+
+  // create reusable transporter object using SMTP transport
+  var transporter = nodemailer.createTransport({
+    service: 'Gmail',
+    auth: {
+      user: 'antibland@gmail.com',
+      pass: 'application specific password'
+    }
+  });
+
+  var mailOptions = {
+    from: req.body.name + '<' + req.body.email + '>', // sender address
+    to: 'antibland@gmail.com',
+    subject: req.body.reason + ' Message From Website',
+    text: req.body.message
+  };
+
+  // send mail with defined transport object
+  transporter.sendMail(mailOptions, function(error, info) {
+    if (error) {
+      res.render('contact-us', {
+        msg: 'Something went wrong. Please try again.',
+        err: true,
+        section: 'contact-us',
+        title: 'Contact Us',
+        subject: req.body.reason || "",
+        company_name: req.app.get('company_name')
+      });
+    } else {
+      res.render('contact-us', {
+        msg: 'Message sent.',
+        err: false,
+        section: 'contact-us',
+        title: 'Contact Us',
+        subject: req.body.reason || "",
+        company_name: req.app.get('company_name')
+      });
+    }
+  });
+});
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
