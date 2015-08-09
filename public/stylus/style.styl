@@ -255,6 +255,15 @@ footer
     @media only screen and (max-width: $mobile)
       flex-wrap: wrap;
 
+&.full-width
+  &> div
+    flex-wrap: wrap;
+  .box-content-image
+    margin: 0 auto 1em;
+    flex: auto;
+  .box-content-description
+    padding-right: 0;
+
 .box-content-image
   box-shadow: $default-bottom-shadow;
   margin: 0 1em 0 0;

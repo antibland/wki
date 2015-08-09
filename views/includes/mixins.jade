@@ -1,6 +1,6 @@
 mixin productContent(product_name, img, classes)
   - classname = classes || ""
-  .box-content
+  .box-content(class='#{classname}')
     h2.ribbon-container(id='_#{product_name.split(" ").join("_")}')
       span.ribbon.
         #{product_name}
