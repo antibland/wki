@@ -39,6 +39,14 @@ router.get('/the-lab', function(req, res, next) {
   });
 });
 
+router.get('/the-owners', function(req, res, next) {
+  res.render('the-owners', {
+    section: 'the-owners',
+    title: 'The Owners',
+    company_name: req.app.get('company_name')
+  });
+});
+
 router.get('/lab-photos', function(req, res, next) {
   res.render('lab-photos', {
     section: 'lab-photos',
