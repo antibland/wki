@@ -202,7 +202,9 @@ section
 
   a:link,
   a:visited
-    color: $peach;
+    color: darken($peach, 30%);
+    text-decoration: none;
+    border-bottom: 1px dashed;
 
   .inner
     padding: 2.5em 3em 5em;
@@ -345,6 +347,7 @@ footer
   white-space: nowrap;
   text-decoration: none;
   appearance: none;
+  border-bottom: none !important;
 
   &.large
     font-size: 1.6em;
