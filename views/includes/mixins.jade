@@ -12,4 +12,4 @@ mixin productContent(product_name, img, classes)
       )
         if block
           block
-    a.call-to-action-button(tabindex='0', href='/contact-us?subject=#{product_name}') Request Info
+    a.call-to-action-button(tabindex='0', href='/contact-us?subject=#{product_name.split(" ").join("%20")}') Request Info
