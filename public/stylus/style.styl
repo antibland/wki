@@ -366,7 +366,7 @@ footer
   line-height: 1;
   position: absolute;
   left: 0;
-  top: 2.8em;
+  top: 2.5em;
 
   img
     vertical-align: middle;
@@ -374,7 +374,7 @@ footer
   .ribbon
     background-color: $blue;
     text-transform: capitalize;
-    font-size: 2rem;
+    font-size: 1.8rem;
     position: absolute;
     bottom: 0;
     left: 0;
@@ -413,3 +413,36 @@ footer
 
 .zero-bottom-margin
   margin-bottom: 0;
+
+.featured-lab-services
+  text-shadow: $header-text-shadow;
+  border-top: 1px solid lighten($peach, 10%);
+  background: rgba(0,0,0,0.8);
+  text-shadow: 1px 4px 3px rgba(0,0,0,.15);
+  color: #fff;
+  font-size: 2rem;
+  font-weight: 500;
+  padding: .8em 1em;
+  text-align: center;
+  letter-spacing: .1em;
+  margin-bottom: 0;
+  position: relative;
+  text-transform: uppercase;
+
+  @media only screen and (max-width: $mobile-small)
+    font-size: 1.7rem;
+
+  &:after
+    position: absolute;
+    top: 0;
+    content: '';
+    display: block;
+    box-shadow: 0 8px 4px -4px rgba(0,0,0,.3);
+    height: 2.6em;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+
+
+

@@ -1,11 +1,13 @@
 extends layout
 
 block content
-  section.lead
+  section.lead.no-slant
     .inner
       h1= title
       h2 Technology. Expertise. Value.
-      p White Knight Implants, LLC is a dental laboratory with people committed to service and quality. <a class='button' href='/the-lab'>Find out more</a>
+      p White Knight Implants, LLC is a dental laboratory with people committed to service and quality.
+  h3.featured-lab-services Featured Services
+
   section
     .inner
 
@@ -13,11 +15,17 @@ block content
         span The  Encode  Impression  System  eliminates  the  need  for  implant-level impressions, effectively streamlining the treatment process for the surgeon, restorative clinician, and patient. Rather than exchange the  healing  component  for  a  separate  transfer  coping  during  the restorative  phase,  the  clinician  simply  takes  a  standard  or  digital impression  of  the  Encode  Healing  Abutment.  This  abutment  is “encoded”  with  special  markings  that,  when  scanned,  relay abutment design and milling information. In addition to saving chair time  and  reducing  inventory  requirements,  the  simplified  Encode process serves to minimize component swapping, mitigating gingival trauma and potentially helping to preserve soft tissue critical to an esthetic outcome.
         span Available in titanium or zirconia with a titanium base, each patient-specific  custom  abutment  from  is  carefully  designed  using  the proprietary  Encode  CAD  library  for  optimal  support of  the  final restoration,  a  natural  emergence  profile,  and  long-term  gingival health.
 
+  section
+    .inner
+
       +productContent('ceramic restorations', '/images/bruxzir_solid_zirconia.jpg')
         span
           | BruxZir
           sup ®&nbsp;
           | Solid Zirconia is indicated for crowns, bridges, implants,inlays and onlays, screw-retained implant crowns and full-arch implant prostheses.
+
+  section
+    .inner
 
       +productContent('itero scans', '/images/itero_scans.jpg', 'full-width')
         span Enter the world of digital dentistry! White Knight Implants can now accept your iTero scans!
