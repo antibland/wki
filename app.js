@@ -50,6 +50,10 @@ app.post('/contact-us', function(req, res) {
         section: 'contact-us',
         title: 'Contact Us',
         subject: req.body.reason || "",
+        name: req.body.name || "",
+        email: req.body.email || "",
+        phone: req.body.phone || "",
+        message: req.body.message || "",
         company_name: req.app.get('company_name')
       });
     } else {

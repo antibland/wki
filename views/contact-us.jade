@@ -6,7 +6,14 @@ block content
     div(class='message', id='dismiss-message')
       a(href='#dismiss-message', aria-label='Click or touch to dismiss message')
         p= msg
-  - var _subject = subject ? subject : "General Question";
+  - String.prototype.capitalize = function(){
+  -   return this.replace( /(^|\s)([a-z])/g , function(m,p1,p2){ return p1+p2.toUpperCase(); } );
+  - };
+  - var _subject = subject ? subject.capitalize() : "General Question";
+  - var _name = name ? name : "";
+  - var _email = email ? email : "";
+  - var _phone = phone ? phone : "";
+  - var _message = message ? message : "";
   section.no-slant.lead
     .inner
       h1= title
@@ -20,18 +27,18 @@ block content
             input(name='reason', value='#{_subject}' id='reason', type='text', required)
           .form-item
             label(for='name', aria-required='true') Name
-            input(placeholder='Name', name='name', id='name', type='text', required)
+            input(placeholder='Name', value='#{_name}', name='name', id='name', type='text', required)
         .form-row
           .form-item
             label(for='email', aria-required='true') Email address
-            input(placeholder='Email', name='email', id='email', type='email', required)
+            input(placeholder='Email', value='#{_email}', name='email', id='email', type='email', required)
           .form-item
             label(for='phone') Phone (optional)
-            input(placeholder='Phone (optional)', name='phone', id='phone', type='tel')
+            input(placeholder='Phone (optional)', value='#{_phone}', name='phone', id='phone', type='tel')
         .form-row.full
           .form-item
             label(for='message', aria-required='true') Message
-            textarea(placeholder='Your Message', name='message', id='message', required)
+            <textarea placeholder='Your Message' name='message' id='message' required>#{_message}</textarea>
         input(value='Send', class='button', type='submit')
   section
     .inner.full
