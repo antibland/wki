@@ -27,23 +27,33 @@ app.post('/contact-us', function(req, res) {
 
   // create reusable transporter object using SMTP transport
   var transporter = nodemailer.createTransport({
-    service: 'Gmail',
+    service: 'zoho',
     auth: {
-      user: 'antibland@gmail.com',
-      pass: 'application specific password'
+      user: 'howard@whiteknightimplants.com',
+      pass: process.env.zoho_pw || ""
     }
   });
 
+  var phone = req.body.phone.length > 0 ? req.body.phone : "Not provided.";
+
+  var mailObj = {
+    from: 'From: ' + req.body.name + '\n',
+    email: 'Email: ' + req.body.email + '\n',
+    phone: 'Phone: ' + phone,
+    message: '\n\n' + req.body.message
+  }
+
   var mailOptions = {
-    from: req.body.name + '<' + req.body.email + '>', // sender address
-    to: 'antibland@gmail.com',
-    subject: req.body.reason + ' Message From Website',
-    text: req.body.message
+    from: 'howard@whiteknightimplants.com', // sender address
+    to: 'howard@whiteknightimplants.com',
+    subject: 'Website Inquiry: ' + req.body.reason,
+    text: mailObj.from + mailObj.email + mailObj.phone + mailObj.message
   };
 
   // send mail with defined transport object
   transporter.sendMail(mailOptions, function(error, info) {
     if (error) {
+      console.log(error);
       res.render('contact-us', {
         msg: 'Something went wrong. Please try again.',
         err: true,
