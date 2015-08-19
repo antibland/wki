@@ -148,11 +148,17 @@ section
       background-size: 100% 800px;
       background-position: 50% 0;
 
+      p:last-child
+        margin-bottom: 10em;
+
       @media only screen and (max-width: $jumbo)
         background-size: auto 800px;
 
       @media only screen and (max-width: $mobile)
         background-size: auto 100%;
+
+        p:last-child
+          margin-bottom: 1em;
 
     +landing-page-image('itero', '/images/services/itero/landing.jpg', 0.4)
       background-size: 100% 800px;
