@@ -48,11 +48,24 @@ router.get('/the-owners', function(req, res, next) {
 });
 
 router.get('/lab-photos', function(req, res, next) {
-  var fs         = require('fs'),
-      file_names = fs.readdirSync('./public/images/lab_photos');
+  var fs            = require('fs'),
+      file_names    = fs.readdirSync('./public/images/lab_photos'),
+      len           = file_names.length,
+      srubbed_names = [],
+      file_ext,
+      file_name;
+
+  for (var i = 0; i < len; i++) {
+    file_name = file_names[i];
+    file_ext = file_name.split('.')[1].toLowerCase();
+
+    if ((file_ext === 'jpg' || file_ext === 'jpeg') && !~file_name.indexOf('@2x')) {
+      srubbed_names.push(file_name);
+    }
+  }
 
   res.render('lab-photos', {
-    images: file_names,
+    images: srubbed_names,
     section: 'lab-photos',
     title: 'Lab Photos',
     company_name: req.app.get('company_name')

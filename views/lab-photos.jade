@@ -9,8 +9,7 @@ block content
     .inner.full
       div.lab-photos-container
         each image in images
-          if (image.split('.')[1].toLowerCase() === 'jpg' || image.split('.')[1].toLowerCase() === 'jpeg') && !~image.indexOf('@2x')
-            figure
-              img(src='#{image}' alt='')
+          figure
+            img(src='#{image}' alt='')
 
 
