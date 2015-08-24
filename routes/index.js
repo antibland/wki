@@ -48,7 +48,11 @@ router.get('/the-owners', function(req, res, next) {
 });
 
 router.get('/lab-photos', function(req, res, next) {
+  var fs         = require('fs'),
+      file_names = fs.readdirSync('./public/images/lab_photos');
+
   res.render('lab-photos', {
+    images: file_names,
     section: 'lab-photos',
     title: 'Lab Photos',
     company_name: req.app.get('company_name')

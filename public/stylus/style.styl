@@ -450,5 +450,30 @@ footer
     bottom: 0;
     z-index: 1;
 
+.center
+  text-align: center;
 
+.lab-photos-container
+  padding: 0.5em 0.25em 4em;
 
+figcaption
+  font-style: italic;
+  text-align: center;
+  font-size: 1.6rem;
+
+figure
+  transition: 0.3s width;
+  display: inline-block;
+  vertical-align: top;
+  width: 33.333%;
+  padding: 0 0.25em 0.5em;
+
+  @media only screen and (max-width: $tablet)
+    width: 50%;
+
+  @media only screen and (max-width: $mobile)
+    width: 100%;
+
+  img
+    display: block;
+    width: 100%;

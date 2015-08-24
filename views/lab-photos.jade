@@ -1,6 +1,16 @@
 extends layout
 
 block content
-  section
+  section.no-slant
     .inner
-      h1= title
+      h1.center= title
+      base(href='/images/lab_photos/')
+  section
+    .inner.full
+      div.lab-photos-container
+        each image in images
+          if image.split('.')[1] === 'JPG'
+            figure
+              img(src='#{image}' alt='')
+
+
