@@ -12,7 +12,8 @@ gulp.task('compress', function() {
   return gulp.src([
       'public/javascripts/utilities.js',
       'public/javascripts/dropdown.js',
-      'public/javascripts/global.js'
+      'public/javascripts/global.js',
+      'public/javascripts/retina.js'
     ])
     .pipe(uglify())
     .pipe(concat('app.min.js'))
