@@ -2,6 +2,7 @@ var dropdown = (function() {
   "use strict";
 
   var toggleNav       = document.getElementById("toggle-nav"),
+      menuListPrimary = document.querySelector(".menu-list.primary"),
       menuListItems   = document.querySelectorAll(".menu-list.primary > .menu-item"),
       menuToggles     = document.querySelectorAll(".menu-item.primary > .menu-toggle"),
       menuSubLinks    = document.querySelectorAll(".menu-link.sub"),
@@ -33,10 +34,39 @@ var dropdown = (function() {
     return false;
   }
 
+  function escapeLists() {
+    closeAllSubLists();
+    setMenuSubLinkTabbing(-1);
+    toggleNav.classList.remove("nav-opened");
+    menuListPrimary.setAttribute("aria-hidden", true);
+  }
+
   toggleNav.addEventListener(
     utilities.isTouchDevice() ? "touchstart" : "click",
     function() {
+      var current_state = menuListPrimary.getAttribute("aria-hidden") || "true",
+          future_state  = current_state === "false" ? true : false;
+
       this.classList.toggle("nav-opened");
+      menuListPrimary.setAttribute("aria-hidden", future_state);
+    }
+  ), false;
+
+  document.addEventListener(
+    utilities.isTouchDevice() ? "touchstart" : "click",
+    function(evt) {
+      evt = evt || window.event;
+
+      if (evt.target &&
+          !~evt.target.className.indexOf("menu-link") &&
+          evt.target.id !== "main-nav" &&
+          evt.target.id !== "toggle-nav-top-line" &&
+          evt.target.id !== "toggle-nav-middle-line" &&
+          evt.target.id !== "toggle-nav-bottom-line" &&
+          evt.target.id !== "toggle-nav" &&
+          evt.target.id !== "toggle-nav-label") {
+        escapeLists();
+      }
     }
   ), false;
 
@@ -44,9 +74,7 @@ var dropdown = (function() {
     evt = evt || window.event;
 
     if (evt.keyCode === utilities.keys.escape) {
-      closeAllSubLists();
-      setMenuSubLinkTabbing(-1);
-      toggleNav.classList.remove("nav-opened");
+      escapeLists();
     }
   }, false);
 

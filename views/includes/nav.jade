@@ -9,12 +9,12 @@
 
 nav(id='main-nav' aria-label='main navigation')
   button(id='toggle-nav', aria-controls='main-nav')
-    span(class='top line')
-    span(class='middle line')
-    span(class='bottom line')
-    span(class='label') MENU
+    span(class='top line', id='toggle-nav-top-line')
+    span(class='middle line', id='toggle-nav-middle-line')
+    span(class='bottom line', id='toggle-nav-bottom-line')
+    span(class='label', id='toggle-nav-label') MENU
 
-  ul(class='#{section} menu-list primary', role='menubar', aria-hidden='false')
+  ul(class='#{section} menu-list primary', role='menubar')
     each item, index in menu_list
       li(class='#{item} menu-item primary', role='menuitem')
         a(href='/#{item}', class='menu-link menu-toggle') #{titles[index]}
