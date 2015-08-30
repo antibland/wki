@@ -222,6 +222,10 @@ section
     max-width: 64em;
     margin: 0 auto;
 
+    @media only screen and (max-width: $mobile)
+     padding-right: 1.5em;
+     padding-left: 1.5em;
+
     &.full
       padding: 0 !important
       max-width: 100%;
@@ -265,6 +269,7 @@ footer
     .box-content-image
       max-width: 372px;
       box-shadow: none;
+      margin: 0 0 1em;
     h5
       font-size: 2.9rem;
       margin-bottom: 0.5em;
