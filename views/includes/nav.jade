@@ -17,7 +17,10 @@ nav(id='main-nav' aria-label='main navigation')
   ul(class='#{section} menu-list primary', role='menubar')
     each item, index in menu_list
       li(class='#{item} menu-item primary', role='menuitem')
-        a(href='/#{item}', class='menu-link menu-toggle') #{titles[index]}
+        if item == 'about-us' || item == 'lab-services' || item == 'resources'
+          a(href='#', class='menu-link menu-toggle') #{titles[index]}
+        else
+          a(href='/#{item}', class='menu-link menu-toggle') #{titles[index]}
 
         if item == 'about-us'
            ul(class='#{section} menu-list sub', role='menubar', aria-hidden='true')
