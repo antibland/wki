@@ -79,7 +79,7 @@ router.get('/lab-photos', function(req, res, next) {
 router.get('/itero', function(req, res, next) {
   res.render('itero', {
     section: 'itero',
-    title: 'Itero',
+    title: 'iTero',
     company_name: req.app.get('company_name')
   });
 });
