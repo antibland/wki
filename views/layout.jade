@@ -6,8 +6,10 @@ html(lang='en', class='no-js')
     meta(http-equiv='X-UA-Compatible', content='IE=Edge')
     meta(name='google-site-verification' content='avwvrtHSCxbiGPFMIc4TcorQGW84FcI2Yqbq_s8xnI0')
     meta(name='keywords', content='Connecticut dentist, Connecticut dental lab, iTero, iTero scan, Emax, Bruxzir Posterior, Bruxzir Anterior, Lava Plus, Custom Abutments, Encode, Izir, Asc Abutments, Mesiostructure, dentures, seminar')
-    title= title
-    include ./includes/critical_css
+    if section == 'index'
+      title #{title}, CT
+    else
+      title= title
     link(rel='stylesheet', href='/stylesheets/style.css')
   body(class='#{section}')
     .container
