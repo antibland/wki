@@ -2,6 +2,7 @@ var dropdown = (function() {
   "use strict";
 
   var toggleNav       = document.getElementById("toggle-nav"),
+      root            = document.querySelector("html"),
       menuListPrimary = document.querySelector(".menu-list.primary"),
       menuListItems   = document.querySelectorAll(".menu-list.primary > .menu-item"),
       menuToggles     = document.querySelectorAll(".menu-item.primary > .menu-toggle"),
@@ -37,7 +38,7 @@ var dropdown = (function() {
   function escapeLists() {
     closeAllSubLists();
     setMenuSubLinkTabbing(-1);
-    toggleNav.classList.remove("nav-opened");
+    root.classList.remove("nav-opened");
     menuListPrimary.setAttribute("aria-hidden", true);
   }
 
@@ -47,7 +48,7 @@ var dropdown = (function() {
       var current_state = menuListPrimary.getAttribute("aria-hidden") || "true",
           future_state  = current_state === "false" ? true : false;
 
-      this.classList.toggle("nav-opened");
+      root.classList.toggle("nav-opened");
       menuListPrimary.setAttribute("aria-hidden", future_state);
     }
   ), false;
