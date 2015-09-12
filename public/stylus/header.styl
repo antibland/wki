@@ -19,12 +19,15 @@ header
     text-decoration: none;
     font-weight: bold;
 
+  @media only screen and (max-width: $mobile-large)
+    top: calc(50% - 2.3em);
+
   @media only screen and (max-width: $mobile)
     left: 50%;
     transform: translateX(-30%);
 
   @media only screen and (max-width: $mobile-xsmall)
-    opacity: 0;
+    font-size: 1rem;
 
 .logo
   padding: 1em 0;
@@ -50,19 +53,28 @@ header
   transition: 0.3s;
 
   @media only screen and (max-width: $mobile-large)
-    right: 1.7em;
-    top: 142%;
+    right: inherit;
+    top: 76%;
+    left: 4.9em;
 
   @media only screen and (max-width: $mobile)
-    top: 132.5%;
+    left: 50%;
+    margin-left: 16px;
+
+  @media only screen and (max-width: $mobile-xsmall)
+    margin-left: 6px;
 
   svg
     width: 40px;
     height: 40px;
 
-    @media only screen and (max-width: $mobile)
+    @media only screen and (max-width: $mobile-large)
       width: 32px;
       height: 32px;
+
+    @media only screen and (max-width: $mobile-xsmall)
+      width: 24px;
+      height: 24px;
 
     path
       fill: white;
