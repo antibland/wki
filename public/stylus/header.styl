@@ -30,7 +30,10 @@ header
     font-size: 1.3rem;
 
 .logo
-  padding: 1em 0;
+  padding: 1em 0 0;
+
+  @media only screen and (max-width: $mobile-large)
+    padding-bottom: 1em;
 
   address
     letter-spacing: 0.6px;
