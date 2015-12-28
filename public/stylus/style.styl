@@ -62,7 +62,10 @@ h2
   .contact-us &
     text-shadow: $header-text-shadow;
     margin: 0;
-    padding: 0 1em 0.75em;
+    padding: 1em 1em 0.75em;
+
+.contact-us .lead h2
+  padding-top: 0;
 
 h3 {
   font-size: 2.2rem;
@@ -139,7 +142,7 @@ section
   &.lead
     h1, h2, p
       color: white;
-    h1, h2
+    h1, h2, p
       text-shadow: $default-text-shadow;
     h2
       font-size: 3.5rem;
@@ -147,6 +150,9 @@ section
       padding-left: 0;
     p
       font-size: 1.8rem;
+      strong
+        text-align: center;
+
 
     .index & a
       font-weight: bold;
