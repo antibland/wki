@@ -9,7 +9,6 @@ router.get('/', function(req, res, next) {
   });
 });
 
-
 router.get('/shipping-instructions', function(req, res, next) {
   res.render('shipping-instructions', {
     section: 'shipping-instructions',
@@ -106,6 +105,14 @@ router.get('/removable_prosthetics', function(req, res, next) {
     title: 'Removable Prosthetics',
     company_name: req.app.get('company_name')
   });
+});
+
+///////////////////////
+// Erroneous Route(s)//
+//////////////////////
+
+router.get('/meet-our-team', function(req, res, next) {
+  res.redirect('/the-owners');
 });
 
 module.exports = router;
