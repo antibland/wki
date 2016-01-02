@@ -39,6 +39,10 @@ h1, h2, h3 {
   transition: 0.3s;
 }
 
+h1, h2
+  @media only screen and (max-width: $mobile-small)
+    margin-bottom: 7% !important;
+
 h1 {
   text-shadow: $header-text-shadow;
   font-size: 6rem;
