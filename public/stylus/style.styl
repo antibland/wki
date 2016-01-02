@@ -67,19 +67,20 @@ h2
 .contact-us .lead h2
   padding-top: 0;
 
-h3 {
+h3
   font-size: 2.2rem;
-}
 
-main ul {
-  padding-left: 3em;
-  margin-bottom: 3em;
-  list-style: none;
+main
+  min-height: $min-content-height;
 
-  @media only screen and (max-width: $mobile-small) {
-    padding-left: 1em;
-  }
-}
+  ul
+    padding-left: 3em;
+    margin-bottom: 3em;
+    list-style: none;
+
+    @media only screen and (max-width: $mobile-small)
+      padding-left: 1em;
+
 
 p, main li {
   font-size: 1.6rem;
