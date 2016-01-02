@@ -1,13 +1,68 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
-<url><loc>http://www.whiteknightimplants.com/</loc><changefreq>daily</changefreq><priority>1.00</priority></url>
-<url><loc>http://www.whiteknightimplants.com/the-lab</loc><changefreq>daily</changefreq><priority>0.85</priority></url>
-<url><loc>http://www.whiteknightimplants.com/the-owners</loc><changefreq>daily</changefreq><priority>0.85</priority></url>
-<url><loc>http://www.whiteknightimplants.com/lab-photos</loc><changefreq>daily</changefreq><priority>0.85</priority></url>
-<url><loc>http://www.whiteknightimplants.com/itero</loc><changefreq>daily</changefreq><priority>0.85</priority></url>
-<url><loc>http://www.whiteknightimplants.com/ceramics</loc><changefreq>daily</changefreq><priority>0.85</priority></url>
-<url><loc>http://www.whiteknightimplants.com/implants</loc><changefreq>daily</changefreq><priority>0.85</priority></url>
-<url><loc>http://www.whiteknightimplants.com/removable_prosthetics</loc><changefreq>daily</changefreq><priority>0.85</priority></url>
-<url><loc>http://www.whiteknightimplants.com/shipping-instructions</loc><changefreq>daily</changefreq><priority>0.85</priority></url>
-<url><loc>http://www.whiteknightimplants.com/contact-us</loc><changefreq>daily</changefreq><priority>0.85</priority></url>
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<url>
+  <loc>http://www.whiteknightimplants.com/</loc>
+</url>
+<url>
+  <loc>http://www.whiteknightimplants.com/the-lab</loc>
+</url>
+<url>
+  <loc>http://www.whiteknightimplants.com/the-owners</loc>
+</url>
+<url>
+  <loc>http://www.whiteknightimplants.com/lab-photos</loc>
+</url>
+<url>
+  <loc>http://www.whiteknightimplants.com/itero</loc>
+</url>
+<url>
+  <loc>http://www.whiteknightimplants.com/ceramics</loc>
+</url>
+<url>
+  <loc>http://www.whiteknightimplants.com/implants</loc>
+</url>
+<url>
+  <loc>http://www.whiteknightimplants.com/removable_prosthetics</loc>
+</url>
+<url>
+  <loc>http://www.whiteknightimplants.com/rx-form.pdf</loc>
+  <lastmod>2016-01-02T05:00:48+00:00</lastmod>
+</url>
+<url>
+  <loc>http://www.whiteknightimplants.com/shipping-instructions</loc>
+</url>
+<url>
+  <loc>http://www.whiteknightimplants.com/technique-books/</loc>
+</url>
+<url>
+  <loc>http://www.whiteknightimplants.com/contact-us</loc>
+</url>
+<url>
+  <loc>http://www.whiteknightimplants.com/technique-books/24%20Hr.%20Delayed.pdf</loc>
+  <lastmod>2016-01-02T05:00:48+00:00</lastmod>
+</url>
+<url>
+  <loc>http://www.whiteknightimplants.com/technique-books/Camstructsure%20Hybrid.pdf</loc>
+  <lastmod>2016-01-02T05:00:48+00:00</lastmod>
+</url>
+<url>
+  <loc>http://www.whiteknightimplants.com/technique-books/locator042515.pdf</loc>
+  <lastmod>2016-01-02T05:00:48+00:00</lastmod>
+</url>
+<url>
+  <loc>http://www.whiteknightimplants.com/technique-books/Mesiostructure%20and%20PFMs.pdf</loc>
+  <lastmod>2016-01-02T05:00:48+00:00</lastmod>
+</url>
+<url>
+  <loc>http://www.whiteknightimplants.com/technique-books/Overdenture.pdf</loc>
+  <lastmod>2016-01-02T05:00:48+00:00</lastmod>
+</url>
+<url>
+  <loc>http://www.whiteknightimplants.com/technique-books/uscg%20encode.pdf</loc>
+  <lastmod>2016-01-02T05:00:48+00:00</lastmod>
+</url>
 </urlset>
