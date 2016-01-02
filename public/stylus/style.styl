@@ -74,6 +74,7 @@ h3 {
 main ul {
   padding-left: 3em;
   margin-bottom: 3em;
+  list-style: none;
 
   @media only screen and (max-width: $mobile-small) {
     padding-left: 1em;
@@ -91,6 +92,17 @@ p, main li {
     font-size: 1.5rem;
   }
 }
+
+.list-as-content
+  margin-top: 2em;
+
+  li
+    background: url('/images/icons/pdf.svg') 0 50% no-repeat;
+
+  &.with-icon
+    li
+      background-size: 1.5em 1.5em;
+      padding-left: 2.1em;
 
 .the-lab section p:first-child:first-letter
   font-size: 3.4rem;

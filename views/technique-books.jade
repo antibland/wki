@@ -1,0 +1,12 @@
+extends layout
+
+block content
+
+  section.no-slant
+    .inner
+      h1= title
+  section
+    ul.list-as-content.with-icon
+      each key, val in books
+        li
+          a(target='_blank', href='#{key}') #{val}

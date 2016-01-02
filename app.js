@@ -53,7 +53,6 @@ app.post('/contact-us', function(req, res) {
   // send mail with defined transport object
   transporter.sendMail(mailOptions, function(error, info) {
     if (error) {
-      console.log(error);
       res.render('contact-us', {
         msg: 'Something went wrong. Please try again.',
         err: true,
