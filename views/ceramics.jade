@@ -3,7 +3,7 @@ extends layout
 block content
   section
     .inner
-      h1= title
+      h1= header_text
       base(href='/images/services/#{title.toLowerCase()}/')
 
       +productContent('emax', 'emax.jpg')

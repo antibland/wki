@@ -1,10 +1,14 @@
 var express = require('express');
 var router = express.Router();
 
+function createTitlePrefix(req, section) {
+  return req.app.get('company_name') + ' | A Connecticut Dental Lab | ' + section;
+}
+
 router.get('/', function(req, res, next) {
   res.render('index', {
     section: 'index',
-    title: 'White Knight Implants',
+    title: createTitlePrefix(req, 'Home'),
     company_name: req.app.get('company_name')
   });
 });
@@ -12,7 +16,8 @@ router.get('/', function(req, res, next) {
 router.get('/shipping-instructions', function(req, res, next) {
   res.render('shipping-instructions', {
     section: 'shipping-instructions',
-    title: 'Shipping Instructions',
+    title: createTitlePrefix(req, 'Shipping Instructions'),
+    header_text: 'Shipping Instructions',
     company_name: req.app.get('company_name')
   });
 });
@@ -30,7 +35,8 @@ router.get('/technique-books', function(req, res, next) {
   res.render('technique-books', {
     books: books,
     section: 'technique-books',
-    title: 'Technique Books',
+    title: createTitlePrefix(req, 'Technique Books'),
+    header_text: 'Technique Books',
     company_name: req.app.get('company_name')
   });
 });
@@ -38,7 +44,8 @@ router.get('/technique-books', function(req, res, next) {
 router.get('/contact-us', function(req, res, next) {
   res.render('contact-us', {
     section: 'contact-us',
-    title: 'Contact Us',
+    title: createTitlePrefix(req, 'Contact Us'),
+    header_text: 'Contact Us',
     subject: req.query.subject || "",
     company_name: req.app.get('company_name')
   });
@@ -51,7 +58,8 @@ router.get('/contact-us', function(req, res, next) {
 router.get('/the-lab', function(req, res, next) {
   res.render('the-lab', {
     section: 'the-lab',
-    title: 'The Lab',
+    title: createTitlePrefix(req, 'The Lab'),
+    header_text: 'The Lab',
     company_name: req.app.get('company_name')
   });
 });
@@ -59,7 +67,8 @@ router.get('/the-lab', function(req, res, next) {
 router.get('/the-owners', function(req, res, next) {
   res.render('the-owners', {
     section: 'the-owners',
-    title: 'The Owners',
+    title: createTitlePrefix(req, 'The Owners'),
+    header_text: 'The Owners',
     company_name: req.app.get('company_name')
   });
 });
@@ -84,7 +93,8 @@ router.get('/lab-photos', function(req, res, next) {
   res.render('lab-photos', {
     images: srubbed_names,
     section: 'lab-photos',
-    title: 'Lab Photos',
+    title: createTitlePrefix(req, 'Lab Photos'),
+    header_text: 'Lab Photos',
     company_name: req.app.get('company_name')
   });
 });
@@ -96,7 +106,8 @@ router.get('/lab-photos', function(req, res, next) {
 router.get('/itero', function(req, res, next) {
   res.render('itero', {
     section: 'itero',
-    title: 'iTero',
+    title: createTitlePrefix(req, 'iTero'),
+    header_text: 'iTero',
     company_name: req.app.get('company_name')
   });
 });
@@ -104,7 +115,8 @@ router.get('/itero', function(req, res, next) {
 router.get('/ceramics', function(req, res, next) {
   res.render('ceramics', {
     section: 'ceramics',
-    title: 'Ceramics',
+    title: createTitlePrefix(req, 'Ceramics'),
+    header_text: 'Ceramics',
     company_name: req.app.get('company_name')
   });
 });
@@ -112,7 +124,8 @@ router.get('/ceramics', function(req, res, next) {
 router.get('/implants', function(req, res, next) {
   res.render('implants', {
     section: 'implants',
-    title: 'Implants',
+    title: createTitlePrefix(req, 'Implants'),
+    header_text: 'Implants',
     company_name: req.app.get('company_name')
   });
 });
@@ -120,7 +133,8 @@ router.get('/implants', function(req, res, next) {
 router.get('/removable_prosthetics', function(req, res, next) {
   res.render('removable_prosthetics', {
     section: 'removable_prosthetics',
-    title: 'Removable Prosthetics',
+    title: createTitlePrefix(req, 'Removable Prosthetics'),
+    header_text: 'Removable Prosthetics',
     company_name: req.app.get('company_name')
   });
 });
