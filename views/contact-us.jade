@@ -9,7 +9,7 @@ block content
   - String.prototype.capitalize = function(){
   -   return this.replace( /(^|\s)([a-z])/g , function(m,p1,p2){ return p1+p2.toUpperCase(); } );
   - };
-  - var _subject = subject ? subject.capitalize() : "General Question";
+  - var _subject = subject ? subject.split('-').join(' ').capitalize() : "General Question";
   - var _name = name ? name : "";
   - var _email = email ? email : "";
   - var _phone = phone ? phone : "";
