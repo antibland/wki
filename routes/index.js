@@ -8,7 +8,7 @@ function createTitlePrefix(req, section) {
 router.get('/', function(req, res, next) {
   res.render('index', {
     section: 'index',
-    title: createTitlePrefix(req, 'Home'),
+    title: req.app.get('company_name') + ' | A Connecticut Dental Lab',
     company_name: req.app.get('company_name')
   });
 });
