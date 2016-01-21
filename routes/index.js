@@ -23,14 +23,14 @@ router.get('/shipping-instructions', function(req, res, next) {
 });
 
 router.get('/technique-books', function(req, res, next) {
-  var resource_path = '/technique-books/',
+  var resource_path = '/technique-books',
       books = {};
-      books['Delayed Immediate Implant Prosthesis'] = resource_path + '24 Hr. Delayed.pdf';
-      books['Camstructsure'] = resource_path + 'Camstructsure Hybrid.pdf';
-      books['Locator Overdenture'] = resource_path + 'locator042515.pdf';
-      books['Mesiostructure'] = resource_path + 'Mesiostructure and PFMs.pdf';
-      books['Bar Overdenture'] = resource_path + 'Overdenture.pdf';
-      books['Encode and Beyond'] = resource_path + 'uscg encode.pdf';
+      books['Delayed Immediate Implant Prosthesis'] = resource_path + '/24 Hr. Delayed.pdf';
+      books['Camstructsure'] = resource_path + '/Camstructsure Hybrid.pdf';
+      books['Locator Overdenture'] = resource_path + '/locator042515.pdf';
+      books['Mesiostructure'] = resource_path + '/Mesiostructure and PFMs.pdf';
+      books['Bar Overdenture'] = resource_path + '/Overdenture.pdf';
+      books['Encode and Beyond'] = resource_path + '/uscg encode.pdf';
 
   res.render('technique-books', {
     books: books,
