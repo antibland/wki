@@ -109,6 +109,16 @@ p, main li {
       background-size: 1.5em 1.5em;
       padding-left: 2.1em;
 
+  &.side-by-side
+    li
+      display: inline-block;
+      width: 50%;
+      vertical-align: top;
+      padding: 0.1em 2.1em;
+
+      @media only screen and (max-width: $mobile)
+        width: 100%;
+
 .the-lab section p:first-child:first-letter
   font-size: 3.4rem;
 
