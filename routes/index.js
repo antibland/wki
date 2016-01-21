@@ -130,9 +130,9 @@ router.get('/implants', function(req, res, next) {
   });
 });
 
-router.get('/removable_prosthetics', function(req, res, next) {
-  res.render('removable_prosthetics', {
-    section: 'removable_prosthetics',
+router.get('/removable-prosthetics', function(req, res, next) {
+  res.render('removable-prosthetics', {
+    section: 'removable-prosthetics',
     title: createTitlePrefix(req, 'Removable Prosthetics'),
     header_text: 'Removable Prosthetics',
     company_name: req.app.get('company_name')
