@@ -100,24 +100,53 @@ p, main li {
 
 .list-as-content
   margin-top: 2em;
-
-  li
-    background: url('/images/icons/pdf.svg') 0 50% no-repeat;
-
-  &.with-icon
-    li
-      background-size: 1.5em 1.5em;
-      padding-left: 2.1em;
+  margin-bottom: 0;
 
   &.side-by-side
-    li
-      display: inline-block;
-      width: 50%;
-      vertical-align: top;
-      padding: 0.1em 2.1em;
+    display: flex;
+    flex-wrap: wrap;
 
-      @media only screen and (max-width: $mobile)
+    span
+      text-align: center;
+
+    a
+      flex: 1 0 auto;
+      border: none;
+      outline: none;
+      align-items: flex-end;
+
+      &:focus,
+      &:hover
+        .thumbnail
+          transform: scale(1.05);
+
+    li
+      display: flex;
+      transition: 0.3s ease-in-out;
+      width: calc(100%/3);
+      padding: 0.1em 1em;
+
+      @media only screen and (max-width: $tablet)
+        width: 50%;
+
+      @media only screen and (max-width: $mobile-small)
         width: 100%;
+        padding: 0.1em 2em;
+        margin-bottom: 3em;
+
+    .list-content
+      display: flex;
+      flex-direction: column;
+
+    .list-item-title
+      font-size: 1.8rem !important;
+      text-align: center;
+
+  .thumbnail
+    transition: 0.3s ease-in-out;
+    width: 100%;
+    display: inline-block;
+    border: 1px solid transparent;
 
 .the-lab section p:first-child:first-letter
   font-size: 3.4rem;
@@ -280,6 +309,11 @@ footer
   text-align: center;
   width: 100%;
   color: white;
+
+  .technique-books & {
+    position: relative;
+    padding: 1em 0 0.1em;
+  }
 
 .container
   min-height: 100%;
@@ -486,7 +520,7 @@ footer
       box-shadow: 0 .062em 0 rgba(255,255,255,.6);
 
 .zero-bottom-margin
-  margin-bottom: 0;
+  margin-bottom: 0 !important;
 
 .featured-header
   text-shadow: $header-text-shadow;

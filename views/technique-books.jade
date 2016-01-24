@@ -4,9 +4,12 @@ block content
 
   section.no-slant
     .inner
-      h1.center= header_text
+      h1.zero-bottom-margin.center= header_text
   section
-    ul.list-as-content.side-by-side.with-icon
-      each key, val in books
+    ul.list-as-content.side-by-side
+      each book in books
         li
-          a(class='black-link', target='_blank', href='#{key}') #{val}
+          div.list-content
+            a(class='black-link', target='_blank', href='#{book.pdf}')
+              img(alt='', class='thumbnail' src='/images/technique-books/thumbnails/#{book.thumb}')
+            h2.list-item-title= book.title
