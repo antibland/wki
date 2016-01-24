@@ -1,3 +1,4 @@
+Sitemap: http://www.whiteknightimplants.com/sitemap.xml
 User-agent: *
 Disallow: /bin/
 Disallow: /routes/
