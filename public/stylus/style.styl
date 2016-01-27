@@ -365,8 +365,13 @@ footer
   .box-content-image
     margin: 0 auto 1em;
     flex: auto;
+    width: 100%;
   .box-content-description
     padding-right: 0;
+
+@media all and (-ms-high-contrast:none)
+  *::-ms-backdrop .box-content-image
+    width: auto !important;
 
 .box-content-image
   box-shadow: $default-bottom-shadow;
@@ -379,6 +384,9 @@ footer
   @media only screen and (max-width: $mobile)
     margin: 0 auto 1em;
     flex: auto;
+
+  @media all and (-ms-high-contrast:none)
+    width: auto;
 
 .box-content-description
   text-align: left;
