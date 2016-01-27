@@ -4,12 +4,11 @@ block content
   section.no-slant
     .inner
       h1.zero-bottom-margin.center= header_text
-      base(href='/images/lab_photos/')
   section
     .inner.full
       div.lab-photos-container
         each image in images
           figure
-            img(src='#{image}' alt='')
+            img(src='/images/lab_photos/#{image}' alt='')
 
 
