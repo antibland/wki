@@ -7,10 +7,15 @@ nav
   z-index: 2;
 
   @media only screen and (max-width: $mobile-large)
+    height: auto;
+    width: auto;
     position: fixed;
     right: -0.5rem;
-    width: 22rem;
     top: 9.49rem;
+
+    .nav-opened &
+      width: $mobile-menu-width;
+      height: $mobile-menu-height;
 
   @media only screen and (max-width: $mobile)
     top: 7.89rem;
