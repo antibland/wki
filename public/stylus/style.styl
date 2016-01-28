@@ -100,8 +100,9 @@ p, main li {
 
 .list-as-content
   margin-top: 2em;
-  margin-bottom: 0;
-  padding: 0 0.5em;
+  margin-bottom: 2em;
+  padding: 1em 0.5em 0;
+  background: lighten(#eee, 10%);
 
   &.side-by-side
     display: flex;
@@ -119,14 +120,15 @@ p, main li {
       &:focus,
       &:hover
         .thumbnail
-          transform: scale(1.05);
+          transform: scale(1.025);
           box-shadow: 0 5px 20px rgba(0,0,0,.4);
 
     li
       display: flex;
       transition: 0.3s ease-in-out;
       width: calc(100%/3);
-      padding: 0.1em 1em;
+      padding: 1em;
+      margin-bottom: 0;
 
       @media only screen and (max-width: $tablet)
         width: 50%;
@@ -148,7 +150,8 @@ p, main li {
     transition: 0.3s ease-in-out;
     width: 100%;
     display: inline-block;
-    border: 1px solid transparent;
+    border-radius: 50%;
+    border: 1px solid #ccc;
 
 .the-lab section p:first-child:first-letter
   font-size: 3.4rem;
