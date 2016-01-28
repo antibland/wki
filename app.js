@@ -109,6 +109,6 @@ app.use(function(err, req, res, next) {
   });
 });
 
-app.set('company_name', 'White Knight Implants, LLC');
+app.set('company_name', 'White Knight Implants');
 
 module.exports = app;

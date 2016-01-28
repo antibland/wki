@@ -2,13 +2,13 @@ var express = require('express');
 var router = express.Router();
 
 function createTitlePrefix(req, section) {
-  return req.app.get('company_name') + ' | A Connecticut Dental Lab | ' + section;
+  return req.app.get('company_name') + ' | CT Dental Lab | ' + section;
 }
 
 router.get('/', function(req, res, next) {
   res.render('index', {
     section: 'index',
-    title: req.app.get('company_name') + ' | A Connecticut Dental Lab',
+    title: req.app.get('company_name') + ' | CT Dental Lab',
     company_name: req.app.get('company_name')
   });
 });
