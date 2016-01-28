@@ -20,6 +20,8 @@ nav
   @media only screen and (max-width: $mobile)
     top: 7.89rem;
 
+
+
   .menu-list.sub
     transition: 0.2s cubic-bezier(0, 0, 1, 0.21);
     display: block;
@@ -101,9 +103,11 @@ nav
     @media only screen and (max-width: $mobile-large)
       border-right: none;
       border-bottom: 1px solid rgba(black, 0.1);
+      transition: none;
 
   @media only screen and (max-width: $mobile-small)
-    width: 17rem;
+    width: 17rem !important;
+    height: 8.6em !important;
 
     .menu-list.sub
       transform: translateX(-12.3em);
