@@ -445,7 +445,6 @@ footer
 .button
   background: $peach;
   transition: 0.2s;
-  box-shadow: 0 6px 3px -3px rgba(0,0,0,0.2);
   border-radius: 1.5rem;
   border: none;
   color: rgba(black, 0.8) !important;
@@ -473,8 +472,9 @@ footer
   &:hover,
   &:focus,
   &:active
-    width: 8.3em;
-    box-shadow: 0 0 3px -3px rgba(0,0,0,0.2);
+    box-shadow: 0px 3px 4px rgba(0,0,0,0.3);
+    background: darken($peach, 10%);
+    color: black !important;
 
 .ribbon-container
   display: inline-block;
