@@ -78,11 +78,17 @@ app.post('/contact-us', function(req, res) {
   });
 });
 
-// catch 404 and forward to error handler
+// just render the 404 view
 app.use(function(req, res, next) {
-  var err = new Error('Not Found');
-  err.status = 404;
-  next(err);
+  res.status(404);
+
+  if (req.accepts('html')) {
+    res.render('404', {
+      url: req.url,
+      company_name: req.app.get('company_name')
+    });
+    return;
+  }
 });
 
 // error handlers
