@@ -22,7 +22,7 @@ html {
 }
 
 body {
-  background: white;
+  background: rgba(0,0,0,.2);
   font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
   font-weight: 300;
   font-size: 1.4em;
@@ -99,8 +99,7 @@ p, main li {
 }
 
 .list-as-content
-  margin-top: 2em;
-  margin-bottom: 2em;
+  margin 0;
   padding: 1em 0.5em 0;
   background: lighten(#eee, 10%);
 
@@ -323,8 +322,10 @@ footer
 .container
   min-height: 100%;
   position: relative;
-  max-width: 100%;
+  max-width: 95em;
   display: block;
+  box-shadow: 0 0 32px 8px rgba(0,0,0,0.3);
+  margin: 0 auto;
 
 .box-content
   box-shadow: $default-bottom-shadow;
