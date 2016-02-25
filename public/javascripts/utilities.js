@@ -46,6 +46,8 @@ var utilities = (function() {
           map: map,
           title: title
       });
+
+      return map;
     },
 
     supportsLocalStorage: function() {

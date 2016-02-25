@@ -52,8 +52,16 @@ block content
         aria-describedby='business-address'
       )
 
-    script(src="https://maps.googleapis.com/maps/api/js?v=3&sensor=false")
+    script(src="https://maps.googleapis.com/maps/api/js")
     script.
+      var map;
+
       google.maps.event.addDomListener(window, 'load', function() {
-        utilities.loadMap('map', 41.345012, -72.975545, 'White Knight Implants');
+        map = utilities.loadMap('map', 41.345012, -72.975545, 'White Knight Implants');
+      });
+
+      google.maps.event.addDomListener(window, 'resize', function() {
+        var center = map.getCenter();
+        google.maps.event.trigger(map, 'resize');
+        map.setCenter(center);
       });
