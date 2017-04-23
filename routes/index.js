@@ -13,6 +13,20 @@ router.get('/', function(req, res, next) {
   });
 });
 
+////////////////////////
+/// Featured Promo ////
+///////////////////////
+
+router.get('/featured-promotion', function(req, res, next) {
+  res.render('featured-promotion', {
+    section: 'featured-promotion',
+    title: createTitlePrefix(req, 'Featured Promotion'),
+    header_text: 'Featured Promotion',
+    company_name: req.app.get('company_name')
+  });
+});
+
+
 router.get('/shipping-instructions', function(req, res, next) {
   res.render('shipping-instructions', {
     section: 'shipping-instructions',
