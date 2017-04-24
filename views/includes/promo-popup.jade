@@ -1,0 +1,27 @@
+.promo-popup
+  .inner
+    h2.title Featured Promotion
+    p 50<sup>%</sup> Off Zirconia or <abbr title="Porcelain Fused to Metal">PFM</abbr> case
+    a.call-to-action-button(href="/featured-promotion") Find out more
+    button.close(aria-label="Dismiss promotion") Dismiss
+script.
+  (function() {
+    var close_button = document.querySelector('.promo-popup .close');
+
+    try {
+      if (typeof utilities.getSessionStorage('promo-popup-close') !== 'undefined') {
+
+        if (utilities.getSessionStorage('promo-popup-close') === 'true') {
+          document.body.classList.add('close-popup');
+        }
+      }
+    } catch(e) {}
+
+    close_button.addEventListener('click', function() {
+      try {
+        utilities.setSessionStorage('promo-popup-close', true);
+      } catch(e) {}
+
+      document.body.classList.add('close-popup');
+    });
+  }())

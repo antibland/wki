@@ -7,6 +7,7 @@
 @import 'hamburger.styl';
 @import 'animations.styl';
 @import 'map.styl';
+@import 'promo-poup.styl';
 
 * {
   box-sizing: border-box;
@@ -338,7 +339,12 @@ footer
   max-width: 95em;
   display: block;
   box-shadow: 0 0 32px 8px rgba(0,0,0,0.3);
-  margin: 0 auto;
+  margin: 0 auto 10rem;
+  background-color: white;
+
+  .close-popup & {
+    margin-bottom: 0;
+  }
 
 .box-content
   box-shadow: $default-bottom-shadow;

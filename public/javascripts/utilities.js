@@ -119,6 +119,14 @@ var utilities = (function() {
       } else {
         return false;
       }
+    },
+
+    setSessionStorage: function(key, val) {
+      sessionStorage.setItem(key, val);
+    },
+
+    getSessionStorage: function(key) {
+      return sessionStorage.getItem(key);
     }
   };
 

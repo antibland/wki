@@ -1,0 +1,44 @@
+.promo-popup
+  position fixed;
+  bottom: 0;
+  left 0;
+  width 100%;
+  background-color $blue;
+  z-index: 1;
+  transition: 0.5s transform;
+  will-change: transform;
+  border-top: 1px solid $peach;
+
+  .close-popup &
+    transform: translateY(20em);
+
+  .close
+    appearance: none;
+    border: none;
+    background-color: transparent;
+    font-size: 1.1rem;
+    text-decoration: underline;
+    cursor: pointer;
+
+  .title
+    margin-bottom 1.5rem !important;
+    text-shadow: $header-text-shadow;
+    letter-spacing: 1px;
+
+  .inner
+    position: relative;
+    max-width: 800px;
+    padding 1.5em 1em;
+    margin: 0 auto;
+    text-align center;
+
+    > * {
+      color: white;
+    }
+
+    .call-to-action-button
+      margin 0;
+      text-align: center;
+      display inline-block;
+      font-size: 1.2rem;
+      margin-right: 5px;
