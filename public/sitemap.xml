@@ -4,107 +4,114 @@
       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
       xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
             http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+
 <url>
-  <loc>http://www.whiteknightimplants.com/</loc>
+  <loc>https://www.whiteknightimplants.com/</loc>
+  <changefreq>weekly</changefreq>
 </url>
 <url>
-  <loc>http://www.whiteknightimplants.com/the-lab</loc>
+  <loc>https://www.whiteknightimplants.com/the-lab</loc>
+  <changefreq>weekly</changefreq>
 </url>
 <url>
-  <loc>http://www.whiteknightimplants.com/the-owners</loc>
+  <loc>https://www.whiteknightimplants.com/the-owners</loc>
+  <changefreq>weekly</changefreq>
 </url>
 <url>
-  <loc>http://www.whiteknightimplants.com/lab-photos</loc>
+  <loc>https://www.whiteknightimplants.com/lab-photos</loc>
+  <changefreq>weekly</changefreq>
 </url>
 <url>
-  <loc>http://www.whiteknightimplants.com/itero</loc>
+  <loc>https://www.whiteknightimplants.com/itero</loc>
+  <changefreq>weekly</changefreq>
 </url>
 <url>
-  <loc>http://www.whiteknightimplants.com/ceramics</loc>
+  <loc>https://www.whiteknightimplants.com/ceramics</loc>
+  <changefreq>weekly</changefreq>
 </url>
 <url>
-  <loc>http://www.whiteknightimplants.com/implants</loc>
+  <loc>https://www.whiteknightimplants.com/implants</loc>
+  <changefreq>weekly</changefreq>
 </url>
 <url>
-  <loc>http://www.whiteknightimplants.com/removable-prosthetics</loc>
+  <loc>https://www.whiteknightimplants.com/removable-prosthetics</loc>
+  <changefreq>weekly</changefreq>
 </url>
 <url>
-  <loc>http://www.whiteknightimplants.com/rx-form.pdf</loc>
-  <lastmod>2016-01-24T09:21:01+00:00</lastmod>
+  <loc>https://www.whiteknightimplants.com/rx-form.pdf</loc>
+  <lastmod>2017-04-24T18:49:29+00:00</lastmod>
+  <changefreq>weekly</changefreq>
 </url>
 <url>
-  <loc>http://www.whiteknightimplants.com/shipping-instructions</loc>
+  <loc>https://www.whiteknightimplants.com/shipping-instructions</loc>
+  <changefreq>weekly</changefreq>
 </url>
 <url>
-  <loc>http://www.whiteknightimplants.com/technique-books</loc>
+  <loc>https://www.whiteknightimplants.com/contact-us</loc>
+  <changefreq>weekly</changefreq>
 </url>
 <url>
-  <loc>http://www.whiteknightimplants.com/contact-us</loc>
+  <loc>https://www.whiteknightimplants.com/contact-us?subject=itero-scans</loc>
+  <changefreq>weekly</changefreq>
 </url>
 <url>
-  <loc>http://www.whiteknightimplants.com/contact-us?subject=encode</loc>
+  <loc>https://www.whiteknightimplants.com/contact-us?subject=encode</loc>
+  <changefreq>weekly</changefreq>
 </url>
 <url>
-  <loc>http://www.whiteknightimplants.com/contact-us?subject=ceramic-restorations</loc>
+  <loc>https://www.whiteknightimplants.com/contact-us?subject=ceramic-restorations</loc>
+  <changefreq>weekly</changefreq>
 </url>
 <url>
-  <loc>http://www.whiteknightimplants.com/contact-us?subject=itero-scans</loc>
+  <loc>https://www.whiteknightimplants.com/featured-promotion</loc>
+  <changefreq>weekly</changefreq>
 </url>
 <url>
-  <loc>http://www.whiteknightimplants.com/contact-us?subject=itero</loc>
+  <loc>https://www.whiteknightimplants.com/contact-us?subject=itero</loc>
+  <changefreq>weekly</changefreq>
 </url>
 <url>
-  <loc>http://www.whiteknightimplants.com/contact-us?subject=emax</loc>
+  <loc>https://www.whiteknightimplants.com/contact-us?subject=emax</loc>
+  <changefreq>weekly</changefreq>
 </url>
 <url>
-  <loc>http://www.whiteknightimplants.com/contact-us?subject=bruxzir-posterior</loc>
+  <loc>https://www.whiteknightimplants.com/contact-us?subject=bruxzir-posterior</loc>
+  <changefreq>weekly</changefreq>
 </url>
 <url>
-  <loc>http://www.whiteknightimplants.com/contact-us?subject=bruxzir-anterior</loc>
+  <loc>https://www.whiteknightimplants.com/contact-us?subject=bruxzir-anterior</loc>
+  <changefreq>weekly</changefreq>
 </url>
 <url>
-  <loc>http://www.whiteknightimplants.com/contact-us?subject=lava-plus</loc>
+  <loc>https://www.whiteknightimplants.com/contact-us?subject=lava-plus</loc>
+  <changefreq>weekly</changefreq>
 </url>
 <url>
-  <loc>http://www.whiteknightimplants.com/contact-us?subject=custom-abutments</loc>
+  <loc>https://www.whiteknightimplants.com/contact-us?subject=custom-abutments</loc>
+  <changefreq>weekly</changefreq>
 </url>
 <url>
-  <loc>http://www.whiteknightimplants.com/contact-us?subject=izir</loc>
+  <loc>https://www.whiteknightimplants.com/contact-us?subject=izir</loc>
+  <changefreq>weekly</changefreq>
 </url>
 <url>
-  <loc>http://www.whiteknightimplants.com/contact-us?subject=asc-abutments</loc>
+  <loc>https://www.whiteknightimplants.com/contact-us?subject=asc-abutments</loc>
+  <changefreq>weekly</changefreq>
 </url>
 <url>
-  <loc>http://www.whiteknightimplants.com/contact-us?subject=mesiostructure</loc>
+  <loc>https://www.whiteknightimplants.com/contact-us?subject=mesiostructure</loc>
+  <changefreq>weekly</changefreq>
 </url>
 <url>
-  <loc>http://www.whiteknightimplants.com/contact-us?subject=full-dentures</loc>
+  <loc>https://www.whiteknightimplants.com/contact-us?subject=full-dentures</loc>
+  <changefreq>weekly</changefreq>
 </url>
 <url>
-  <loc>http://www.whiteknightimplants.com/contact-us?subject=partial-dentures</loc>
+  <loc>https://www.whiteknightimplants.com/contact-us?subject=partial-dentures</loc>
+  <changefreq>weekly</changefreq>
 </url>
 <url>
-  <loc>http://www.whiteknightimplants.com/technique-books/24%20Hr.%20Delayed.pdf</loc>
-  <lastmod>2016-01-24T09:21:01+00:00</lastmod>
-</url>
-<url>
-  <loc>http://www.whiteknightimplants.com/technique-books/Camstructsure%20Hybrid.pdf</loc>
-  <lastmod>2016-01-24T09:21:01+00:00</lastmod>
-</url>
-<url>
-  <loc>http://www.whiteknightimplants.com/technique-books/locator042515.pdf</loc>
-  <lastmod>2016-01-24T09:21:01+00:00</lastmod>
-</url>
-<url>
-  <loc>http://www.whiteknightimplants.com/technique-books/Mesiostructure%20and%20PFMs.pdf</loc>
-  <lastmod>2016-01-24T09:21:01+00:00</lastmod>
-</url>
-<url>
-  <loc>http://www.whiteknightimplants.com/technique-books/Overdenture.pdf</loc>
-  <lastmod>2016-01-24T09:21:01+00:00</lastmod>
-</url>
-<url>
-  <loc>http://www.whiteknightimplants.com/technique-books/uscg%20encode.pdf</loc>
-  <lastmod>2016-01-24T09:21:01+00:00</lastmod>
+  <loc>https://www.whiteknightimplants.com/contact-us?subject=Featured-Promotion</loc>
+  <changefreq>weekly</changefreq>
 </url>
 </urlset>
