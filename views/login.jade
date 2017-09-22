@@ -1,0 +1,25 @@
+extends layout
+
+block content
+  section
+    .inner
+      if(typeof msg !== 'undefined')
+
+        div(class='message', id='dismiss-message')
+          a(href='#dismiss-message', aria-label='Click or touch to dismiss message')
+            p= msg
+
+      h1= header_text
+      form(method='post')
+        div
+          label(for="username") Username
+          input(type="text" name="username" id="username")
+
+        div
+          label(for="password") Password
+          input(type="password" name="password" id="password")
+
+        input(type="submit" value="Submit" class="button")
+
+
+

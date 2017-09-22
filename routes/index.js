@@ -177,6 +177,40 @@ router.get('/removable-prosthetics', function(req, res, next) {
   });
 });
 
+router.get('/secure', function(req, res, next) {
+  res.render('secure', {
+    section: 'admin',
+    title: 'Hello there',
+    header_text: 'You made it',
+    company_name: req.app.get('company_name')
+  });
+});
+
+router.get('/login', function(req, res, next) {
+  res.render('login', {
+    section: 'site-login',
+    title: 'Hello there',
+    header_text: 'Admin Login',
+    company_name: req.app.get('company_name')
+  });
+});
+
+router.post('/login', function(req, res, next) {
+  if (req.body.username && req.body.username === 'user' && req.body.password && req.body.password === 'pass') {
+    console.log('auth = ' + req.session.authenticated);
+    req.session.authenticated = true;
+    res.redirect('secure');
+  } else {
+    res.render('login', {
+      section: 'site-login',
+      title: 'Login error',
+      header_text: 'Admin Login',
+      company_name: req.app.get('company_name'),
+      msg: 'Username and/or password is in correct'
+    });
+  }
+});
+
 ///////////////////////
 // Erroneous Route(s)//
 //////////////////////

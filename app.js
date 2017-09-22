@@ -1,3 +1,13 @@
+/*  How do I start the app?
+
+    Not ideal, but it takes two terminal tabs.
+
+    Tab 1: $ npm start
+    Tab 2: $ gulp
+
+    Note: Make sure livereload Chrome plugin is started
+*/
+
 var compression = require('compression');
 var express = require('express');
 var path = require('path');
@@ -7,8 +17,23 @@ var nodemailer = require('nodemailer');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var routes = require('./routes/index');
+var session = require('express-session');
 
 var app = express();
+
+function checkAuth (req, res, next) {
+  console.log('checkAuth ' + req.url);
+
+  // don't serve /secure to those not logged in
+  // you should add to this list, for each and every secure url
+  if (req.url === '/secure' && (!req.session || !req.session.authenticated)) {
+    res.render('unauthorized', { status: 403 });
+    return;
+  }
+
+  next();
+}
+
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -19,6 +44,17 @@ app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
+
+app.set('trust proxy', 1); // trust first proxy
+app.use(session({
+  secret: 'keyboard cat',
+  resave: false,
+  saveUninitialized: true,
+  cookie: { secure: false } // TODO: set to true at the end
+}));
+
+app.use(checkAuth);
+
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', routes);
