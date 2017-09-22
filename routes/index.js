@@ -186,6 +186,12 @@ router.get('/secure', function(req, res, next) {
   });
 });
 
+router.get('/logout', function(req, res, next) {
+  req.session.destroy(function(err) {
+    res.redirect('/login');
+  })
+});
+
 router.get('/login', function(req, res, next) {
   res.render('login', {
     section: 'site-login',
@@ -197,7 +203,6 @@ router.get('/login', function(req, res, next) {
 
 router.post('/login', function(req, res, next) {
   if (req.body.username && req.body.username === 'user' && req.body.password && req.body.password === 'pass') {
-    console.log('auth = ' + req.session.authenticated);
     req.session.authenticated = true;
     res.redirect('secure');
   } else {
