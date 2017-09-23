@@ -42,7 +42,9 @@ function checkAuth (req, res, next) {
 }
 
 // connect to Mongo when the app initializes
-mongoose.connect('mongodb://localhost/wki-admin');
+if (app.get('env') === 'development') {
+  mongoose.connect('mongodb://localhost/wki-admin');
+}
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
