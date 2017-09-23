@@ -5,7 +5,6 @@ var mongoose = require('mongoose')
    ,ObjectId = Schema.ObjectId;
 
 var promoSchema = new Schema({
-    thread: ObjectId,
     date: {type: Date, default: Date.now},
     title: { type: String, required: true, unique: true },
     text_teaser: { type: String, required: true },

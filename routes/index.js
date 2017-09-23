@@ -201,19 +201,6 @@ router.get('/login', function(req, res, next) {
   });
 });
 
-router.get('/promos', function(req, res, next) {
-  var msg = req.session.msg || undefined;
-  req.session.msg = null;
-
-  res.render('promos', {
-    section: 'admin-promos',
-    title: '',
-    header_text: 'Promotions!',
-    company_name: req.app.get('company_name'),
-    msg: msg
-  });
-});
-
 router.post('/login', function(req, res, next) {
   if (req.body.username && req.body.username === 'user' && req.body.password && req.body.password === 'pass') {
     req.session.authenticated = true;
