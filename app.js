@@ -18,12 +18,11 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var routes = require('./routes/index');
 var session = require('express-session');
+var mongoose = require('mongoose');
 
 var app = express();
 
 function checkAuth (req, res, next) {
-  console.log('checkAuth ' + req.url);
-
   // don't serve /secure to those not logged in
   // you should add to this list, for each and every secure url
   if (req.url === '/secure' && (!req.session || !req.session.authenticated)) {
@@ -42,6 +41,8 @@ function checkAuth (req, res, next) {
   next();
 }
 
+// connect to Mongo when the app initializes
+mongoose.connect('mongodb://localhost/wki-admin');
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -49,8 +50,10 @@ app.set('view engine', 'jade');
 
 app.use(compression());
 app.use(logger('dev'));
+
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.urlencoded({ extended: true }));
+
 app.use(cookieParser());
 
 app.set('trust proxy', 1); // trust first proxy
@@ -66,6 +69,13 @@ app.use(checkAuth);
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', routes);
+
+// set up the RESTful API, handler methods are defined in api.js
+var api = require('./controllers/api.js');
+app.post('/promo', api.post);
+//app.get('/promo/:title.:format?', api.show);
+//app.get('/promo', api.list);
+
 
 app.post('/contact-us', function(req, res) {
 
