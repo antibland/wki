@@ -1,6 +1,36 @@
 .admin-promo {
   form {
-    margin-bottom 5em;
+    &:first-of-type,
+    &:last-of-type {
+      margin-bottom 6em;
+    }
+  }
+
+  form .contents {
+    visibility hidden;
+    opacity: 0;
+    transition: 0.5s opacity, visibility, max-height ease-in-out, padding;
+    max-height: 0;
+    overflow: hidden;
+  }
+
+  .trigger {
+    padding: 20px 10px;
+    appearance: none;
+    border: none;
+    display: block;
+    width: 100%;
+    font-size: 1.3em;
+    background: rgba(177, 177, 177, .5);
+    cursor pointer;
+    margin-bottom: 1px;
+
+    &.active ~ .contents {
+      visibility visible;
+      max-height: 50em;
+      opacity: 1;
+      padding-top: 20px;
+    }
   }
 
   ul {

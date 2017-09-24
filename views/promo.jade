@@ -1,7 +1,7 @@
 extends layout
 
 block content
-  section
+  section.no-slant
     .inner
       if(typeof msg !== 'undefined')
 
@@ -27,27 +27,31 @@ block content
 
         each promo, index in promos
           form(method="POST" action="/promo/#{promo._id}/update")
-            ul.promos
-              li
-                span.label Title
-                input(type="text" name="update_title_#{promo._id}" value="#{promo.title}" required)
-              li
-                span.label Promotion teaser text
-                input(type="text" name="update_text_teaser_#{promo._id}" value="#{promo.text_teaser}" required)
-              li
-                span.label Promotion full text
-                textarea(name="update_text_#{promo._id}" required)=promo.text
-              li
-                input.button(type="submit" value="Update")
-                a.delete(href='/promo/#{promo._id}/delete') Delete
+            button.trigger=promo.title
+            .contents
+              ul.promos
+                li
+                  span.label Title
+                  input(type="text" name="update_title_#{promo._id}" value="#{promo.title}" required)
+                li
+                  span.label Promotion teaser text
+                  input(type="text" name="update_text_teaser_#{promo._id}" value="#{promo.text_teaser}" required)
+                li
+                  span.label Promotion full text
+                  textarea(name="update_text_#{promo._id}" required)=promo.text
+                li
+                  input.button(type="submit" value="Update")
+                  a.delete(href='/promo/#{promo._id}/delete') Delete
+
       else
         p There are no promotions so far.
 
-
-
-        //- select(name="promos" id="promos")
-        //-   option(value="#") --
-        //-   for promo in promos
-        //-     option(value="#{promo.title}") #{promo.title} - #{promo.date}
-
+  script.
+    var btns = document.getElementsByClassName('trigger');
+    Array.prototype.forEach.call(btns, function(btn) {
+      btn.addEventListener('click', function(e) {
+        e.preventDefault();
+        this.classList.toggle('active');
+      });
+    });
 
