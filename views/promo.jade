@@ -25,7 +25,7 @@ block content
 
       if promos.length
 
-        each promo, index in promos
+        each promo in promos
           form(method="POST" action="/promo/#{promo._id}/update")
             button.trigger=promo.title
             .contents
@@ -45,6 +45,19 @@ block content
 
       else
         p There are no promotions so far.
+
+      h2 Set live promotion
+
+      if promos.length
+          form(method="POST" action="/promo/set_live")
+            select(name="promos_select")
+              option(value="#") -- None --
+              each promo in promos
+                option(value="#{promo._id}" selected=promo.live == true) #{promo.title}
+            input.button(type="submit" value="Submit")
+      else
+        p There are no promotions so far.
+
 
   script.
     var btns = document.getElementsByClassName('trigger');

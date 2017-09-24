@@ -79,6 +79,7 @@ var api = require('./controllers/api.js');
 app.post('/promo', api.post);
 app.post('/promo/:id/update', api.update); // kind of shitty—-should be app.put
 app.get('/promo/:id/delete', api.delete); // kind of shitty—-should be app.delete
+app.post('/promo/set_live', api.set_live);
 app.get('/promo', api.list);
 
 

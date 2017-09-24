@@ -50,6 +50,35 @@ exports.update = function(req, res) {
   });
 }
 
+exports.set_live = function(req, res) {
+  var id = req.body.promos_select;
+
+  // set any live promos to false
+  Promo.update(
+    { live: { $eq: true } },
+    { $set: { live: false } },
+    { multi: true }, function(err) {
+      if (err) throw err;
+    }
+  )
+
+  if (id === '#') {
+    req.session.msg = 'Promotions are disabled';
+    res.redirect('back');
+  } else { // set the chosen promo live
+    Promo.findOneAndUpdate(
+      { _id: id },
+      { $set: {live: true} },
+      { upsert: false}, function(err, promo) {
+        if (err) throw err;
+
+        req.session.msg = promo.title + ' is now live';
+        res.redirect('back');
+      }
+    )
+  }
+}
+
 exports.delete = function(req, res) {
   Promo.remove({
     _id: req.params.id
