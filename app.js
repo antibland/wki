@@ -23,9 +23,11 @@ var mongoose = require('mongoose');
 var app = express();
 
 function checkAuth (req, res, next) {
-  // don't serve /secure to those not logged in
-  // you should add to this list, for each and every secure url
-  if (req.url === '/secure' && (!req.session || !req.session.authenticated)) {
+  const blacklist = ['/secure', '/promo'];
+  const unauthenticated = (!req.session || !req.session.authenticated);
+
+  if (blacklist.includes(req.url) && unauthenticated ||
+    ~req.url.indexOf('/promo') && unauthenticated) {
     res.render('unauthorized',
       {
         status: 403,
