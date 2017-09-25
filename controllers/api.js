@@ -47,10 +47,10 @@ exports.update = function(req, res) {
   });
 }
 
-exports.set_live = function(req, res) {
+exports.set_live = async function(req, res) {
   var id = req.body.promos_select;
 
-  Promo.findOneAndUpdate(
+  await Promo.findOneAndUpdate(
     { "live" : "true" },
     { $set: { "live" : false } },
     function(err) {
@@ -62,7 +62,7 @@ exports.set_live = function(req, res) {
     req.session.msg = 'Promotions are disabled';
     res.redirect('back');
   } else { // set the chosen promo live
-    Promo.findOneAndUpdate(
+    await Promo.findOneAndUpdate(
       { _id: id },
       { $set: { "live" : true } },
       function(err, promo) {
