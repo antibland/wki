@@ -46,6 +46,9 @@ function checkAuth (req, res, next) {
 // connect to Mongo when the app initializes
 if (app.get('env') === 'development') {
   mongoose.connect('mongodb://localhost/wki-admin');
+  require('dotenv').config()
+} else {
+  mongoose.connect('mongodb://' + process.env.DB_USER + ':' + process.env.DB_PASS + '@ds147274.mlab.com:47274/wki-admin')
 }
 
 // view engine setup
@@ -175,6 +178,7 @@ app.use(function(err, req, res, next) {
   });
 });
 
-app.set('company_name', 'White Knight Implants');
+app.locals.company_name = 'White Knight Implants';
+app.locals.promo = null;
 
 module.exports = app;

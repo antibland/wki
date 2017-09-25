@@ -14,11 +14,12 @@ html(lang='en', class='no-js')
     link(href='/apple-touch-icon-152x152.png', rel='apple-touch-icon', sizes='152x152')
 
   body(class='#{section}')
-    .container
+    .container(class=(promo ? 'show-promotion' : ''))
       include ./includes/header
       include ./includes/mixins.jade
       main
         block content
       include ./includes/footer
 
-    include ./includes/promo-popup
+    if promo
+      include ./includes/promo-popup

@@ -1,19 +1,26 @@
 extends layout
 
 block content
-  section.no-slant.lead
-    .inner
-      h1= header_text
-      h2 50<sup>%</sup> Off Zirconia or <abbr title="Porcelain Fused to Metal">PFM</abbr> case
-  section
-    .inner
-      p For a short time only we are offering
-        +space
-        strong 50<sup>%</sup> off your first single unit Zirconia or <abbr title="Porcelain Fused to Metal">PFM</abbr> case.
-      p If you are not 100<sup>%</sup> satisfied, return the crown for a full refund.
-      p We also offer volume discounts.
-      p
-        | Questions or comments about this promotion? Call us at 1-800-231-9995 or
-        +space
-        a(tabindex='0', href='/contact-us?subject=Featured-Promotion') contact us
-        | .
+  if promo
+    section.no-slant.lead
+      .inner
+        h1=header_text
+        h2!=promo.title
+
+    section
+      .inner
+        div(style='white-space: pre; font-size: 1.7rem; margin-bottom: 1.5em;')!=promo.text
+
+        p
+          | Questions or comments about this promotion? Call us at 1-800-231-9995 or
+          +space
+          a(tabindex='0', href='/contact-us?subject=Featured-Promotion') contact us
+          | .
+  else
+    section.no-slant.lead
+      .inner
+        h1=header_text
+        h2 None right now
+    section
+      .inner
+        p Currently, we are running no promotions. Please check back soon.

@@ -2,14 +2,23 @@ var express = require('express');
 var router = express.Router();
 
 function createTitlePrefix(req, section) {
-  return req.app.get('company_name') + ' | CT Dental Lab | ' + section;
+  return req.app.locals.company_name + ' | CT Dental Lab | ' + section;
 }
+
+router.get('/*', function(req, res, next) {
+  var Promo = require('../models/promo.js');
+
+  Promo.findOne({ live: true }, function(err, promo) {
+    req.app.locals.promo = promo;
+  });
+
+  next();
+});
 
 router.get('/', function(req, res, next) {
   res.render('index', {
     section: 'index',
-    title: req.app.get('company_name') + ' | CT Dental Lab',
-    company_name: req.app.get('company_name')
+    title: req.app.locals.company_name + ' | CT Dental Lab'
   });
 });
 
@@ -21,8 +30,7 @@ router.get('/featured-promotion', function(req, res, next) {
   res.render('featured-promotion', {
     section: 'featured-promotion',
     title: createTitlePrefix(req, 'Featured Promotion'),
-    header_text: 'Featured Promotion',
-    company_name: req.app.get('company_name')
+    header_text: 'Featured Promotion'
   });
 });
 
@@ -31,8 +39,7 @@ router.get('/shipping-instructions', function(req, res, next) {
   res.render('shipping-instructions', {
     section: 'shipping-instructions',
     title: createTitlePrefix(req, 'Shipping Instructions'),
-    header_text: 'Shipping Instructions',
-    company_name: req.app.get('company_name')
+    header_text: 'Shipping Instructions'
   });
 });
 
@@ -74,8 +81,7 @@ router.get('/technique-books', function(req, res, next) {
     books: books,
     section: 'technique-books',
     title: createTitlePrefix(req, 'Technique Books'),
-    header_text: 'Technique Books',
-    company_name: req.app.get('company_name')
+    header_text: 'Technique Books'
   });
 });
 
@@ -84,8 +90,7 @@ router.get('/contact-us', function(req, res, next) {
     section: 'contact-us',
     title: createTitlePrefix(req, 'Contact Us'),
     header_text: 'Contact Us',
-    subject: req.query.subject || "",
-    company_name: req.app.get('company_name')
+    subject: req.query.subject || ""
   });
 });
 
@@ -97,8 +102,7 @@ router.get('/the-lab', function(req, res, next) {
   res.render('the-lab', {
     section: 'the-lab',
     title: createTitlePrefix(req, 'The Lab'),
-    header_text: 'The Lab',
-    company_name: req.app.get('company_name')
+    header_text: 'The Lab'
   });
 });
 
@@ -106,8 +110,7 @@ router.get('/the-owners', function(req, res, next) {
   res.render('the-owners', {
     section: 'the-owners',
     title: createTitlePrefix(req, 'The Owners'),
-    header_text: 'The Owners',
-    company_name: req.app.get('company_name')
+    header_text: 'The Owners'
   });
 });
 
@@ -132,8 +135,7 @@ router.get('/lab-photos', function(req, res, next) {
     images: srubbed_names,
     section: 'lab-photos',
     title: createTitlePrefix(req, 'Lab Photos'),
-    header_text: 'Lab Photos',
-    company_name: req.app.get('company_name')
+    header_text: 'Lab Photos'
   });
 });
 
@@ -145,8 +147,7 @@ router.get('/itero', function(req, res, next) {
   res.render('itero', {
     section: 'itero',
     title: createTitlePrefix(req, 'iTero'),
-    header_text: 'iTero',
-    company_name: req.app.get('company_name')
+    header_text: 'iTero'
   });
 });
 
@@ -154,8 +155,7 @@ router.get('/ceramics', function(req, res, next) {
   res.render('ceramics', {
     section: 'ceramics',
     title: createTitlePrefix(req, 'Ceramics'),
-    header_text: 'Ceramics',
-    company_name: req.app.get('company_name')
+    header_text: 'Ceramics'
   });
 });
 
@@ -163,8 +163,7 @@ router.get('/implants', function(req, res, next) {
   res.render('implants', {
     section: 'implants',
     title: createTitlePrefix(req, 'Implants'),
-    header_text: 'Implants',
-    company_name: req.app.get('company_name')
+    header_text: 'Implants'
   });
 });
 
@@ -172,8 +171,7 @@ router.get('/removable-prosthetics', function(req, res, next) {
   res.render('removable-prosthetics', {
     section: 'removable-prosthetics',
     title: createTitlePrefix(req, 'Removable Prosthetics'),
-    header_text: 'Removable Prosthetics',
-    company_name: req.app.get('company_name')
+    header_text: 'Removable Prosthetics'
   });
 });
 
@@ -181,8 +179,7 @@ router.get('/secure', function(req, res, next) {
   res.render('secure', {
     section: 'admin',
     title: 'Hello there',
-    header_text: 'You made it',
-    company_name: req.app.get('company_name')
+    header_text: 'You made it'
   });
 });
 
@@ -196,13 +193,14 @@ router.get('/login', function(req, res, next) {
   res.render('login', {
     section: 'site-login',
     title: 'Hello there',
-    header_text: 'Admin Login',
-    company_name: req.app.get('company_name')
+    header_text: 'Admin Login'
   });
 });
 
 router.post('/login', function(req, res, next) {
-  if (req.body.username && req.body.username === 'user' && req.body.password && req.body.password === 'pass') {
+  console.log(process.env.secure_user, process.env.secure_pass);
+  if (req.body.username && req.body.username === process.env.ADMIN_USER &&
+      req.body.password && req.body.password === process.env.ADMIN_PASS) {
     req.session.authenticated = true;
     res.redirect('secure');
   } else {
@@ -210,7 +208,6 @@ router.post('/login', function(req, res, next) {
       section: 'site-login',
       title: 'Login error',
       header_text: 'Admin Login',
-      company_name: req.app.get('company_name'),
       msg: 'Username and/or password is in correct'
     });
   }

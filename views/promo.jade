@@ -7,7 +7,7 @@ block content
 
         div(class='message', id='dismiss-message')
           a(href='#dismiss-message', aria-label='Click or touch to dismiss message')
-            p= msg
+            p!= msg
 
       h1=header_text
       h2 Add a promotion
@@ -15,9 +15,7 @@ block content
       form(method='POST' action='/promo')
         label(for="title") Promotion title
         input(type="text" name="title" id="title" required placeholder="My Awesome Promotion")
-        label(for="text_teaser") Promotion teaser text
-        input(type="text" name="text_teaser" id="text_teaser" required placeholder="I appear inside the promotion popup. Keep me small.")
-        label(for="text") Promotion full text
+        label(for="text") Promotion text
         textarea(name="text" id="text" required)
         input(type="submit" class="button" value="Submit")
 
@@ -27,17 +25,14 @@ block content
 
         each promo in promos
           form(method="POST" action="/promo/#{promo._id}/update")
-            button.trigger=promo.title
+            button.trigger!=promo.title
             .contents
               ul.promos
                 li
-                  span.label Title
-                  input(type="text" name="update_title_#{promo._id}" value="#{promo.title}" required)
+                  span.label Promotion Title
+                  input(type="text" name="update_title_#{promo._id}" value!=promo.title required)
                 li
-                  span.label Promotion teaser text
-                  input(type="text" name="update_text_teaser_#{promo._id}" value="#{promo.text_teaser}" required)
-                li
-                  span.label Promotion full text
+                  span.label Promotion text
                   textarea(name="update_text_#{promo._id}" required)=promo.text
                 li
                   input.button(type="submit" value="Update")
@@ -53,7 +48,7 @@ block content
             select(name="promos_select")
               option(value="#") -- None --
               each promo in promos
-                option(value="#{promo._id}" selected=promo.live == true) #{promo.title}
+                option(value="#{promo._id}" selected=promo.live == true)!=promo.title
             input.button(type="submit" value="Submit")
       else
         p There are no promotions so far.
