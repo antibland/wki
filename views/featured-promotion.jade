@@ -9,7 +9,7 @@ block content
 
     section
       .inner
-        div(style='white-space: pre; font-size: 1.7rem; margin-bottom: 1.5em;')!=promo.text
+        div(style='font-size: 1.7rem; margin-bottom: 1.5em;')!=promo.text.replace(/\n/g, '<br/>')
 
         p
           | Questions or comments about this promotion? Call us at 1-800-231-9995 or
