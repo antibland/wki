@@ -198,7 +198,6 @@ router.get('/login', function(req, res, next) {
 });
 
 router.post('/login', function(req, res, next) {
-  console.log(process.env.secure_user, process.env.secure_pass);
   if (req.body.username && req.body.username === process.env.ADMIN_USER &&
       req.body.password && req.body.password === process.env.ADMIN_PASS) {
     req.session.authenticated = true;
