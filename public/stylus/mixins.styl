@@ -14,13 +14,32 @@ background-image-retina($file, $type, $width, $height)
       background-size: $width $height;
 
 landing-page-image($page, $url, $shadow_opacity = 0.28)
-  .{$page} &
+  .{$page}.webp &
     background:
       linear-gradient(
         rgba(0, 0, 0, $shadow_opacity),
         rgba(0, 0, 0, $shadow_opacity)
       ),
-      url($url) no-repeat;
+      url($url + '.webp') no-repeat;
+
+    {block}
+
+    .inner:first-child
+      padding-top: 5em;
+
+      @media only screen and (max-width: $mobile)
+        padding-top: 3.5em;
+        padding-right: 1.5em;
+        padding-left: 1.5em;
+
+
+  .{$page}.no-webp &
+    background:
+      linear-gradient(
+        rgba(0, 0, 0, $shadow_opacity),
+        rgba(0, 0, 0, $shadow_opacity)
+      ),
+      url($url + '.jpg') no-repeat;
 
     {block}
 
