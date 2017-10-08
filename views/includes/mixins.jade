@@ -5,7 +5,11 @@ mixin productContent(product_name, img, classes)
       span.ribbon.
         #{product_name}
     div
-      img.box-content-image(src='#{img}', alt='#{product_name}')
+
+      picture
+        source(type='image/webp' srcset='#{img}.webp')
+        img.box-content-image(src='#{img}.jpg', alt='#{product_name}')
+
       p.box-content-description(
         aria-describedby='_#{product_name.split(" ").join("_")}',
         class='#{classname}'

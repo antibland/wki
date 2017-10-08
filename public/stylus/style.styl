@@ -398,7 +398,7 @@ footer
 &.full-width
   &> div
     flex-wrap: wrap;
-  .box-content-image
+  .box-content-image, picture
     margin: 0 auto 1em;
     flex: auto;
     width: 100%;
@@ -409,12 +409,15 @@ footer
   *::-ms-backdrop .box-content-image
     width: auto !important;
 
+picture,
 .box-content-image
-  box-shadow: $default-bottom-shadow;
   margin: 0 1em 0 0;
   flex: 0 0 331px;
   max-width: 100%;
   height: auto;
+
+.box-content-image
+  box-shadow: $default-bottom-shadow;
 
   @media only screen and (max-width: $mobile)
     margin: 0 auto 1em;
