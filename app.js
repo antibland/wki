@@ -1,9 +1,5 @@
 /*  How do I start the app?
-
-    Not ideal, but it takes two terminal tabs.
-
-    Tab 1: $ npm start
-    Tab 2: $ gulp
+    $ npm start
 
     Note: Make sure livereload Chrome plugin is started
 */
@@ -65,7 +61,7 @@ app.use(cookieParser());
 
 app.set('trust proxy', 1); // trust first proxy
 app.use(session({
-  secret: 'keyboard cat',
+  secret: process.env.session_secret,
   resave: false,
   saveUninitialized: true,
   cookie: { secure: false } // TODO: set to true at the end
