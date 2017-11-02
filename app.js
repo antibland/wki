@@ -41,10 +41,10 @@ function checkAuth (req, res, next) {
 
 // connect to Mongo when the app initializes
 if (app.get('env') === 'development') {
-  mongoose.connect('mongodb://localhost/wki-admin');
+  mongoose.connect('mongodb://localhost/wki-admin', { useMongoClient: true });
   require('dotenv').config()
 } else {
-  mongoose.connect('mongodb://' + process.env.DB_USER + ':' + process.env.DB_PASS + '@ds147274.mlab.com:47274/wki-admin')
+  mongoose.connect('mongodb://' + process.env.DB_USER + ':' + process.env.DB_PASS + '@ds147274.mlab.com:47274/wki-admin', { useMongoClient: true })
 }
 
 // view engine setup
