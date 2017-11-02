@@ -82,7 +82,7 @@ app.post('/promo/set_live', api.set_live);
 app.get('/promo', api.list);
 
 
-app.post('/contact-us', function(req, res) {
+app.post('/contact-us', (req, res) => {
 
   // create reusable transporter object using SMTP transport
   var transporter = nodemailer.createTransport({

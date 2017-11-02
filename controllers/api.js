@@ -1,12 +1,12 @@
 var Promo = require('../models/promo.js');
 
-exports.post = function(req, res) {
+exports.post = (req, res) => {
   var p = new Promo({
     title: req.body.title,
     text: req.body.text
   });
 
-  p.save(function(err) {
+  p.save(err => {
     if (err) throw err; // TODO: Show clean error(s) in the view
 
     req.session.msg = 'Promotion added';
@@ -14,11 +14,11 @@ exports.post = function(req, res) {
   });
 }
 
-exports.list = function(req, res) {
+exports.list = (req, res) => {
   var msg = req.session.msg || undefined;
   req.session.msg = null;
 
-  Promo.find({}, function(err, promos) {
+  Promo.find({}, (err, promos) => {
     res.render('promo', {
       section: 'admin-promo',
       title: '',
@@ -29,16 +29,16 @@ exports.list = function(req, res) {
   });
 }
 
-exports.update = function(req, res) {
+exports.update = (req, res) => {
   var id = req.params.id;
 
-  Promo.findById(id, function(err, promo) {
+  Promo.findById(id, (err, promo) => {
     if (err) throw err; // TODO: Show clean error(s) in the view
 
     promo.title = req.body[`update_title_${id}`];
     promo.text = req.body[`update_text_${id}`];
 
-    promo.save(function(err) {
+    promo.save(err => {
       if (err) throw err; // TODO: Show clean error(s) in the view
 
       req.session.msg = 'Promotion updated';
@@ -47,13 +47,13 @@ exports.update = function(req, res) {
   });
 }
 
-exports.set_live = async function(req, res) {
+exports.set_live = async (req, res) => {
   var id = req.body.promos_select;
 
   await Promo.findOneAndUpdate(
     { "live" : "true" },
     { $set: { "live" : false } },
-    function(err) {
+    err => {
       if (err) throw err;
     }
   )
@@ -65,7 +65,7 @@ exports.set_live = async function(req, res) {
     await Promo.findOneAndUpdate(
       { _id: id },
       { $set: { "live" : true } },
-      function(err, promo) {
+      (err, promo) => {
         if (err) throw err;
 
         req.app.locals.promo = promo;
@@ -76,10 +76,10 @@ exports.set_live = async function(req, res) {
   }
 }
 
-exports.delete = function(req, res) {
+exports.delete = (req, res) => {
   Promo.deleteOne({
     _id: req.params.id
-  }, function(err) {
+  }, err => {
     if (err) throw err; // TODO: Show clean error(s) in the view
 
     req.session.msg = 'Promotion deleted';
