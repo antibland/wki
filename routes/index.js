@@ -5,17 +5,17 @@ function createTitlePrefix(req, section) {
   return req.app.locals.company_name + ' | CT Dental Lab | ' + section;
 }
 
-router.get('/*', function(req, res, next) {
+router.get('/*', (req, res, next) => {
   var Promo = require('../models/promo.js');
 
-  Promo.findOne({ live: true }, function(err, promo) {
+  Promo.findOne({ live: true }, (err, promo) => {
     req.app.locals.promo = promo;
   });
 
   next();
 });
 
-router.get('/', function(req, res, next) {
+router.get('/', (req, res, next) => {
   res.render('index', {
     section: 'index',
     title: req.app.locals.company_name + ' | CT Dental Lab'
@@ -26,7 +26,7 @@ router.get('/', function(req, res, next) {
 /// Featured Promo ////
 ///////////////////////
 
-router.get('/featured-promotion', function(req, res, next) {
+router.get('/featured-promotion', (req, res, next) => {
   res.render('featured-promotion', {
     section: 'featured-promotion',
     title: createTitlePrefix(req, 'Featured Promotion'),
@@ -35,7 +35,7 @@ router.get('/featured-promotion', function(req, res, next) {
 });
 
 
-router.get('/shipping-instructions', function(req, res, next) {
+router.get('/shipping-instructions', (req, res, next) => {
   res.render('shipping-instructions', {
     section: 'shipping-instructions',
     title: createTitlePrefix(req, 'Shipping Instructions'),
@@ -43,7 +43,7 @@ router.get('/shipping-instructions', function(req, res, next) {
   });
 });
 
-router.get('/technique-books', function(req, res, next) {
+router.get('/technique-books', (req, res, next) => {
   var books = [
         {
           title: 'Delayed Immediate Implant Prosthesis',
@@ -85,7 +85,7 @@ router.get('/technique-books', function(req, res, next) {
   });
 });
 
-router.get('/contact-us', function(req, res, next) {
+router.get('/contact-us', (req, res, next) => {
   res.render('contact-us', {
     section: 'contact-us',
     title: createTitlePrefix(req, 'Contact Us'),
@@ -98,7 +98,7 @@ router.get('/contact-us', function(req, res, next) {
 // About Us //
 /////////////
 
-router.get('/the-lab', function(req, res, next) {
+router.get('/the-lab', (req, res, next) => {
   res.render('the-lab', {
     section: 'the-lab',
     title: createTitlePrefix(req, 'The Lab'),
@@ -106,7 +106,7 @@ router.get('/the-lab', function(req, res, next) {
   });
 });
 
-router.get('/the-owners', function(req, res, next) {
+router.get('/the-owners', (req, res, next) => {
   res.render('the-owners', {
     section: 'the-owners',
     title: createTitlePrefix(req, 'The Owners'),
@@ -114,7 +114,7 @@ router.get('/the-owners', function(req, res, next) {
   });
 });
 
-router.get('/lab-photos', function(req, res, next) {
+router.get('/lab-photos', (req, res, next) => {
   var fs            = require('fs'),
       file_names    = fs.readdirSync('./public/images/lab_photos'),
       len           = file_names.length,
@@ -143,7 +143,7 @@ router.get('/lab-photos', function(req, res, next) {
 // Lab Services //
 /////////////////
 
-router.get('/itero', function(req, res, next) {
+router.get('/itero', (req, res, next) => {
   res.render('itero', {
     section: 'itero',
     title: createTitlePrefix(req, 'iTero'),
@@ -151,7 +151,7 @@ router.get('/itero', function(req, res, next) {
   });
 });
 
-router.get('/ceramics', function(req, res, next) {
+router.get('/ceramics', (req, res, next) => {
   res.render('ceramics', {
     section: 'ceramics',
     title: createTitlePrefix(req, 'Ceramics'),
@@ -159,7 +159,7 @@ router.get('/ceramics', function(req, res, next) {
   });
 });
 
-router.get('/implants', function(req, res, next) {
+router.get('/implants', (req, res, next) => {
   res.render('implants', {
     section: 'implants',
     title: createTitlePrefix(req, 'Implants'),
@@ -167,7 +167,7 @@ router.get('/implants', function(req, res, next) {
   });
 });
 
-router.get('/removable-prosthetics', function(req, res, next) {
+router.get('/removable-prosthetics', (req, res, next) => {
   res.render('removable-prosthetics', {
     section: 'removable-prosthetics',
     title: createTitlePrefix(req, 'Removable Prosthetics'),
@@ -175,7 +175,7 @@ router.get('/removable-prosthetics', function(req, res, next) {
   });
 });
 
-router.get('/secure', function(req, res, next) {
+router.get('/secure', (req, res, next) => {
   res.render('secure', {
     section: 'admin',
     title: 'Hello there',
@@ -183,13 +183,13 @@ router.get('/secure', function(req, res, next) {
   });
 });
 
-router.get('/logout', function(req, res, next) {
-  req.session.destroy(function(err) {
+router.get('/logout', (req, res, next) => {
+  req.session.destroy(err => {
     res.redirect('/login');
   })
 });
 
-router.get('/login', function(req, res, next) {
+router.get('/login', (req, res, next) => {
   res.render('login', {
     section: 'site-login',
     title: 'Hello there',
@@ -197,7 +197,7 @@ router.get('/login', function(req, res, next) {
   });
 });
 
-router.post('/login', function(req, res, next) {
+router.post('/login', (req, res, next) => {
   if (req.body.username && req.body.username === process.env.ADMIN_USER &&
       req.body.password && req.body.password === process.env.ADMIN_PASS) {
     req.session.authenticated = true;
@@ -216,7 +216,7 @@ router.post('/login', function(req, res, next) {
 // Erroneous Route(s)//
 //////////////////////
 
-router.get('/meet-our-team', function(req, res, next) {
+router.get('/meet-our-team', (req, res, next) => {
   res.redirect('/the-owners');
 });
 

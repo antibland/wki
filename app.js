@@ -110,7 +110,7 @@ app.post('/contact-us', (req, res) => {
   };
 
   // send mail with defined transport object
-  transporter.sendMail(mailOptions, function(error, info) {
+  transporter.sendMail(mailOptions, (error, info) => {
     if (error) {
       res.render('contact-us', {
         msg: 'Something went wrong. Please try again.',
@@ -138,7 +138,7 @@ app.post('/contact-us', (req, res) => {
 });
 
 // just render the 404 view
-app.use(function(req, res, next) {
+app.use((req, res, next) => {
   res.status(404);
 
   if (req.accepts('html')) {
@@ -155,7 +155,7 @@ app.use(function(req, res, next) {
 // development error handler
 // will print stacktrace
 if (app.get('env') === 'development') {
-  app.use(function(err, req, res, next) {
+  app.use((err, req, res, next) => {
     res.status(err.status || 500);
     res.render('error', {
       message: err.message,
@@ -166,7 +166,7 @@ if (app.get('env') === 'development') {
 
 // production error handler
 // no stacktraces leaked to user
-app.use(function(err, req, res, next) {
+app.use((err, req, res, next) => {
   res.status(err.status || 500);
   res.render('error', {
     message: err.message,
