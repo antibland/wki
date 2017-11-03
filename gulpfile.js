@@ -8,7 +8,7 @@ var autoprefixer = require('gulp-autoprefixer')
 var livereload = require('gulp-livereload');
 var gutil = require('gulp-util');
 
-gulp.task('compress', function() {
+gulp.task('compress', () => {
   return gulp.src([
       'public/javascripts/utilities.js',
       'public/javascripts/dropdown.js',
@@ -21,11 +21,11 @@ gulp.task('compress', function() {
     .pipe(livereload());
 });
 
-gulp.task('build-css', function() {
+gulp.task('build-css', () => {
   return gulp.src('public/stylus/*.styl')
     .pipe(plumber())
     .pipe(stylus())
-    .on('error', function (err) {
+    .on('error', err => {
       gutil.log(err);
       this.emit('end');
     })
@@ -47,7 +47,7 @@ gulp.task('build-css', function() {
     .pipe(livereload());
 });
 
-gulp.task('watch', function() {
+gulp.task('watch', () => {
   livereload.listen();
   gulp.watch('public/stylus/*.styl', ['build-css']);
   gulp.watch('public/javascripts/*.js', ['compress']);

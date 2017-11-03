@@ -4,19 +4,19 @@
     Note: Make sure livereload Chrome plugin is started
 */
 
-var compression = require('compression');
-var express = require('express');
-var path = require('path');
-var favicon = require('serve-favicon');
-var logger = require('morgan');
-var nodemailer = require('nodemailer');
-var cookieParser = require('cookie-parser');
-var bodyParser = require('body-parser');
-var routes = require('./routes/index');
-var session = require('express-session');
-var mongoose = require('mongoose');
+const compression = require('compression');
+const express = require('express');
+const path = require('path');
+const favicon = require('serve-favicon');
+const logger = require('morgan');
+const nodemailer = require('nodemailer');
+const cookieParser = require('cookie-parser');
+const bodyParser = require('body-parser');
+const routes = require('./routes/index');
+const session = require('express-session');
+const mongoose = require('mongoose');
 
-var app = express();
+const app = express();
 
 function checkAuth (req, res, next) {
   const blacklist = ['/secure', '/promo'];
@@ -44,7 +44,8 @@ if (app.get('env') === 'development') {
   mongoose.connect('mongodb://localhost/wki-admin', { useMongoClient: true });
   require('dotenv').config()
 } else {
-  mongoose.connect('mongodb://' + process.env.DB_USER + ':' + process.env.DB_PASS + '@ds147274.mlab.com:47274/wki-admin', { useMongoClient: true })
+  mongoose.connect('mongodb://' + process.env.DB_USER + ':' + process.env.DB_PASS + '@ds147274.mlab.com:47274/wki-admin',
+                  { useMongoClient: true })
 }
 
 // view engine setup
@@ -74,7 +75,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', routes);
 
 // set up the RESTful API, handler methods are defined in api.js
-var api = require('./controllers/api.js');
+const api = require('./controllers/api.js');
 app.post('/promo', api.post);
 app.post('/promo/:id/update', api.update); // kind of shitty—-should be app.put
 app.get('/promo/:id/delete', api.delete); // kind of shitty—-should be app.delete
@@ -85,7 +86,7 @@ app.get('/promo', api.list);
 app.post('/contact-us', (req, res) => {
 
   // create reusable transporter object using SMTP transport
-  var transporter = nodemailer.createTransport({
+  const transporter = nodemailer.createTransport({
     service: 'zoho',
     auth: {
       user: 'howard@whiteknightimplants.com',
@@ -93,16 +94,16 @@ app.post('/contact-us', (req, res) => {
     }
   });
 
-  var phone = req.body.phone.length > 0 ? req.body.phone : "Not provided.";
+  const phone = req.body.phone.length > 0 ? req.body.phone : "Not provided.";
 
-  var mailObj = {
+  const mailObj = {
     from: 'From: ' + req.body.name + '\n',
     email: 'Email: ' + req.body.email + '\n',
     phone: 'Phone: ' + phone,
     message: '\n\n' + req.body.message
   }
 
-  var mailOptions = {
+  const mailOptions = {
     from: 'howard@whiteknightimplants.com', // sender address
     to: 'howard@whiteknightimplants.com',
     subject: 'Website Inquiry: ' + req.body.reason,

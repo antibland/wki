@@ -1,10 +1,12 @@
 // The Promo model
 
-var mongoose = require('mongoose')
+const mongoose = require('mongoose')
    ,Schema = mongoose.Schema
    ,ObjectId = Schema.ObjectId;
 
-var promoSchema = new Schema({
+mongoose.Promise = global.Promise;
+
+const promoSchema = new Schema({
     date: {type: Date, default: Date.now},
     title: { type: String, required: true, unique: true },
     text: { type: String, required: true },

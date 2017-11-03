@@ -1,7 +1,7 @@
-var Promo = require('../models/promo.js');
+const Promo = require('../models/promo.js');
 
 exports.post = (req, res) => {
-  var p = new Promo({
+  const p = new Promo({
     title: req.body.title,
     text: req.body.text
   });
@@ -15,7 +15,7 @@ exports.post = (req, res) => {
 }
 
 exports.list = (req, res) => {
-  var msg = req.session.msg || undefined;
+  const msg = req.session.msg || undefined;
   req.session.msg = null;
 
   Promo.find({}, (err, promos) => {
@@ -30,7 +30,7 @@ exports.list = (req, res) => {
 }
 
 exports.update = (req, res) => {
-  var id = req.params.id;
+  const id = req.params.id;
 
   Promo.findById(id, (err, promo) => {
     if (err) throw err; // TODO: Show clean error(s) in the view
@@ -48,7 +48,7 @@ exports.update = (req, res) => {
 }
 
 exports.set_live = async (req, res) => {
-  var id = req.body.promos_select;
+  const id = req.body.promos_select;
 
   await Promo.findOneAndUpdate(
     { "live" : "true" },
