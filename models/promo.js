@@ -13,6 +13,6 @@ const promoSchema = new Schema({
     live: { type: Boolean, default: false }
 });
 
-var Promo = mongoose.model('Promo', promoSchema);
+const Promo = mongoose.model('Promo', promoSchema);
 
 module.exports = Promo;
