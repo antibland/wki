@@ -106,11 +106,11 @@ router.get('/the-lab', (req, res, next) => {
   });
 });
 
-router.get('/the-owners', (req, res, next) => {
-  res.render('the-owners', {
-    section: 'the-owners',
-    title: createTitlePrefix(req, 'The Owners'),
-    header_text: 'The Owners'
+router.get('/the-owner', (req, res, next) => {
+  res.render('the-owner', {
+    section: 'the-owner',
+    title: createTitlePrefix(req, 'The Owner'),
+    header_text: 'The Owner'
   });
 });
 
@@ -218,7 +218,7 @@ router.post('/login', (req, res, next) => {
 //////////////////////
 
 router.get('/meet-our-team', (req, res, next) => {
-  res.redirect('/the-owners');
+  res.redirect('/the-owner');
 });
 
 module.exports = router;
