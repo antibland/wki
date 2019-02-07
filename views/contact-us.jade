@@ -52,7 +52,8 @@ block content
         aria-describedby='business-address'
       )
 
-    script(src="https://maps.googleapis.com/maps/api/js")
+    script(async defer src=`https://maps.googleapis.com/maps/api/js?key=${process.env.GM_API_KEY}&callback=initMap`
+  type="text/javascript")
     script.
       var map;
 
