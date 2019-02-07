@@ -55,14 +55,20 @@ block content
     script(async defer src=`https://maps.googleapis.com/maps/api/js?key=${process.env.GM_API_KEY}&callback=initMap`
   type="text/javascript")
     script.
-      var map;
+      function initMap() {}
 
-      google.maps.event.addDomListener(window, 'load', function() {
-        map = utilities.loadMap('map', 41.345012, -72.975545, 'White Knight Implants');
-      });
+      (() => {
+        initMap = function() {
+          var map;
 
-      google.maps.event.addDomListener(window, 'resize', function() {
-        var center = map.getCenter();
-        google.maps.event.trigger(map, 'resize');
-        map.setCenter(center);
-      });
+          google.maps.event.addDomListener(window, 'load', function() {
+            map = utilities.loadMap('map', 41.345012, -72.975545, 'White Knight Implants');
+          });
+
+          google.maps.event.addDomListener(window, 'resize', function() {
+            var center = map.getCenter();
+            google.maps.event.trigger(map, 'resize');
+            map.setCenter(center);
+          });
+        }
+      })()
