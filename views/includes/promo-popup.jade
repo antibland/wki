@@ -1,8 +1,7 @@
 .promo-popup
   .inner
-    h2.title Featured Promotion
-    p!= promo.title
-    a.call-to-action-button(href="/featured-promotion") Find out more
+    h2.title promo.title
+    p!= promo.text
     button.close(aria-label="Dismiss promotion") Dismiss
 script.
   (function() {
