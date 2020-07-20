@@ -172,6 +172,30 @@ footer p
 section
   position: relative;
 
+  &.masthead-covid-message
+    &:after
+      content: none !important;
+      background: none;
+      transform: none;
+
+    .inner 
+      padding: 0 !important;
+
+    p 
+      background-image: url('/images/covid.png');
+      background-repeat: no-repeat !important;
+      background-position: 0 66% !important;
+      padding: 6.2rem 0 4.8rem 11rem
+      margin: 0;
+      font-size: 1.8rem;
+      font-weight: bold;
+      color: #333;
+      line-height: 1.4;
+
+      @media only screen and (max-width: $tablet)
+        background-position: 0 50% !important;
+        padding: 3.9rem 0px 3.5rem 11rem;
+
   &.no-slant,
   &:last-child
     .inner

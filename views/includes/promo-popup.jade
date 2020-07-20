@@ -1,6 +1,6 @@
 .promo-popup
   .inner
-    h2.title promo.title
+    h2.title!= promo.title
     p!= promo.text
     button.close(aria-label="Dismiss promotion") Dismiss
 script.
