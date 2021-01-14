@@ -105,7 +105,7 @@ app.post('/contact-us', (req, res) => {
 
   const mailOptions = {
     from: 'howard@whiteknightimplants.com', // sender address
-    to: 'howard@whiteknightimplants.com',
+    to: 'wki4951@gmail.com',
     subject: 'Website Inquiry: ' + req.body.reason,
     text: mailObj.from + mailObj.email + mailObj.phone + mailObj.message
   };
